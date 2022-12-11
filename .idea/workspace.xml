@@ -9,21 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d79c946a-99fc-437c-957f-851669e44686" name="Changes" comment="Inserite senzioni">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/Angry.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/Happy.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/Sad.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/Smile.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/WakeApp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/user.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/video.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/paziente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/paziente.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/styles/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/styles/bootstrap.css" afterDir="false" />
-    </list>
+    <list default="true" id="d79c946a-99fc-437c-957f-851669e44686" name="Changes" comment="Inserite senzioni" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -177,7 +163,7 @@
       <workItem from="1670763388123" duration="236000" />
       <workItem from="1670763631593" duration="567000" />
       <workItem from="1670764215160" duration="170000" />
-      <workItem from="1670764730555" duration="13002000" />
+      <workItem from="1670764730555" duration="13319000" />
     </task>
     <task id="LOCAL-00001" summary="Inserite senzioni">
       <created>1670689257291</created>
@@ -186,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670689257291</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Inserite senzioni">
+      <created>1670778092479</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1670778092479</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
