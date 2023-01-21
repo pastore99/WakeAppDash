@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="ISO-8859-1" import="java.util.*, beans.Utente" %>
 <html>
 <head>
   <title>Dashboard</title>
@@ -43,6 +43,12 @@
           </form>
 
           <!-- Tabella lista pazienti -->
+
+          <%
+            Collection<?> utenti = (Collection<?>) request.getAttribute("utenti");
+            if(utenti == null) response.sendRedirect("utenti-control");
+            if (utenti != null && utenti.size() > 0) {
+          %>
           <div class="row">
             <div class="col-12"><p id="LblNumeroPazienti" class="color-brown">Ci sono <b>x</b> pazienti</p></div>
             <div class="col-12">
@@ -52,24 +58,45 @@
                   <th scope="col" class="color-brown text-center">Nome</th>
                   <th scope="col" class="color-brown text-center">Cognome</th>
                   <th scope="col" class="color-brown text-center">Codice fiscale</th>
-                  <th scope="col" class="color-brown text-center">Sesso</th>
                   <th scope="col" class="color-brown text-center">Data di nascita</th>
+                  <th scope="col" class="color-brown text-center">Email</th>
                   <th scope="col" class="color-brown text-center"></th>
                 </tr>
                 </thead>
                 <tbody>
+                <%
+                  Iterator<?> iterator = utenti.iterator();
+                  while (iterator.hasNext()) {
+                    Utente utente = (Utente) iterator.next();
+                %>
                 <tr>
-                  <td class="color-brown align-middle text-center">Nome</th>
-                  <td class="color-brown align-middle text-center">Cognome</td>
-                  <td class="color-brown align-middle text-center">CDCFSC00A00G000A</td>
-                  <td class="color-brown align-middle text-center">N.D.</td>
-                  <td class="color-brown align-middle text-center">00/00/0000</td>
-                  <td class="text-end"><button type="button" class="btn btn-primary border-0 bg-yellow-dark color-brown btn-sm">Apri<i class="bi bi-arrow-bar-right ms-2"></i></button></td>
+                  <td class="color-brown align-middle text-center"><%=utente.getNome()%> </th>
+                  <td class="color-brown align-middle text-center"><%=utente.getCognome()%></td>
+                  <td class="color-brown align-middle text-center"><%=utente.getCodiceFiscale()%></td>
+                  <td class="color-brown align-middle text-center"><%=utente.getDataDiNascita()%></td>
+                  <td class="color-brown align-middle text-center"><%=utente.getEmail()%></td>
+                  <td class="text-end"><a href="<%=response.encodeURL("paziente.jsp?cf=" + utente.getCodiceFiscale())%>" class="btn btn-primary border-0 bg-yellow-dark color-brown btn-sm">Apri<i class="bi bi-arrow-bar-right ms-2"></i></a></td>
                 </tr>
+                <%
+                  }
+                %>
                 </tbody>
               </table>
             </div>
           </div>
+          <%
+            } else {
+          %>
+          <div class="row h-75 d-flex align-content-center">
+            <div class="col-md-12 text-center">
+              <img src="illustrations/empty.svg" class="img-fluid my-5" alt="Nessun utente presente." style="height: 240px">
+              <h5>Non ci sono utenti.</h5>
+              <p>Gli utenti che si registrano all'applicazione vengono visualizzati in questa schermata.<br />Sii paziente, arriveranno presto nuovi utenti!</p>
+            </div>
+          </div>
+          <%
+            }
+          %>
         </div>
       </div>
     </div>
