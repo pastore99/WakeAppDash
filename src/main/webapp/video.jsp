@@ -1,4 +1,13 @@
+<%@ page import="beans.Video" %>
+<%@ page import="beans.Utente" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+  String idUtente = request.getParameter("idUtente");
+  String idVideo = request.getParameter("idVideo");
+  Video video = (Video) request.getAttribute("video");
+  Utente user = (Utente) request.getAttribute("utente");
+  if(video == null || user == null) response.sendRedirect(response.encodeRedirectURL("./video-control?idUtente="+idUtente+"&idVideo="+idVideo));
+%>
 <html>
 <head>
     <title>Video paziente</title>
@@ -12,15 +21,15 @@
         <div class="row">
           <div class="col-12 d-flex justify-content-center align-items-center pt-5 pb-4"><img src="img/WakeApp.png" height="50px" alt="Logo WakeApp"></div>
           <div class="col-12 d-flex justify-content-center align-items-center">
-            <button type="button" class="btn btn-primary border-0 bg-yellow-dark color-brown"><i class="bi bi-people-fill me-2"></i>Lista pazienti</button>
+            <a href="<%=response.encodeURL("dashboard.jsp")%>" class="btn btn-primary border-0 bg-yellow-dark color-brown"><i class="bi bi-people-fill me-2"></i>Lista pazienti</a>
           </div>
         </div>
       </div>
       <div class="col-md-11 m-0 p-0">
         <div class="container-fluid p-5">
           <div class="row mb-4 d-flex align-items-center">
-            <div class="col-1"><a class="color-brown text-decoration-none fs-5"><i class="bi bi-arrow-left"></i></a></div>
-            <div class="col"><h1 class="color-brown"><b>Nome Cognome</b></h1></div>
+            <div class="col-1"><a class="color-brown text-decoration-none fs-5" href="<%=response.encodeURL("paziente.jsp?id="+user.getIdUtente())%>"><i class="bi bi-arrow-left"></i></a></div>
+            <div class="col"><h1 class="color-brown"><b><%=user.getNome() + " " + user.getCognome()%></b></h1></div>
           </div>
 
           <!-- Video -->
@@ -30,7 +39,7 @@
                 <div>16x9</div>
               </div>
             </div>
-            <div class="col-12"><p class="text-white" id="LblDataRegistrazione">Video registrato il 00/00/0000 alle 00:00</p></div>
+            <div class="col-12"><p class="text-white" id="LblDataRegistrazione">Video registrato il <%=video.getData()%> alle <%=video.getOra()%></p></div>
           </div>
 
           <!-- Emozioni -->

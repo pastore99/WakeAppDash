@@ -9,6 +9,7 @@ public class Video {
     private String emozioneUtente;
     private String ora;
     private String idUtente;
+    private String path;
 
     public Video() {}
     public Video(Integer idVideo, Date data, Integer durata, String emozioneIa, String emozioneUtente, String ora, String idUtente) {
@@ -68,6 +69,13 @@ public class Video {
     }
     public void setIdUtente(String idUtente) {
         this.idUtente = idUtente;
+    }
+
+    public String getPath() {
+        return path;
+    }
+    public void setPath(String path) {
+        this.path = path;
     }
 
     @Override

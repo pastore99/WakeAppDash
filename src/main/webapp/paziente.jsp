@@ -1,3 +1,12 @@
+<%@ page import="beans.Utente" %>
+<%@ page import="java.util.Collection" %>
+<%@ page import="beans.Video" %>
+<%@ page import="java.util.Iterator" %>
+<%@ page import="beans.Audio" %>
+<%
+  Utente user = (Utente) request.getAttribute("utente");
+  if(user == null) response.sendRedirect("utente-control");
+%>
 <html>
 <head>
   <title>Paziente</title>
@@ -11,15 +20,15 @@
         <div class="row">
           <div class="col-12 d-flex justify-content-center align-items-center pt-5 pb-4"><img src="img/WakeApp.png" height="50px" alt="Logo WakeApp"></div>
           <div class="col-12 d-flex justify-content-center align-items-center">
-            <button type="button" class="btn btn-primary border-0 bg-yellow-dark color-brown"><i class="bi bi-people-fill me-2"></i>Lista pazienti</button>
+            <a href="<%=response.encodeURL("dashboard.jsp")%>" class="btn btn-primary border-0 bg-yellow-dark color-brown"><i class="bi bi-people-fill me-2"></i>Lista pazienti</a>
           </div>
         </div>
       </div>
       <div class="col-md-11 m-0 p-0">
         <div class="container-fluid p-5">
           <div class="row mb-4 d-flex align-items-center">
-            <div class="col-1"><a class="color-brown text-decoration-none fs-5"><i class="bi bi-arrow-left"></i></a></div>
-            <div class="col"><h1 class="color-brown"><b>Nome Cognome</b></h1></div>
+            <div class="col-1"><a class="color-brown text-decoration-none fs-5" href="<%=response.sendRedirect("dashboard.jsp")%>"><i class="bi bi-arrow-left"></i></a></div>
+            <div class="col"><h1 class="color-brown"><b><%=user.getNome() + " " + user.getCognome()%></b></h1></div>
           </div>
 
           <!-- Scheda paziente -->
@@ -31,27 +40,27 @@
               <form class="row">
                 <div class="col-md-6 mb-2">
                   <label for="TxtNomePaziente" class="form-label">Nome</label>
-                  <input type="text" class="form-control" id="TxtNomePaziente">
+                  <input type="text" class="form-control" id="TxtNomePaziente" readonly value="<%=user.getNome()%>">
                 </div>
                 <div class="col-md-6 mb-2">
                   <label for="TxtCognomePaziente" class="form-label">Cognome</label>
-                  <input type="text" class="form-control" id="TxtCognomePaziente">
+                  <input type="text" class="form-control" id="TxtCognomePaziente" readonly value="<%=user.getCognome()%>">
                 </div>
                 <div class="col-md-6 mb-2">
                   <label for="TxtIndirizzoPaziente" class="form-label">Indirizzo</label>
-                  <input type="text" class="form-control" id="TxtIndirizzoPaziente">
+                  <input type="text" class="form-control" id="TxtIndirizzoPaziente" readonly value="<%=user.getResidenza()%>">
                 </div>
                 <div class="col-md-6 mb-2">
                   <label for="TxtDataNascitaPaziente" class="form-label">Data di nascita</label>
-                  <input type="date" class="form-control" id="TxtDataNascitaPaziente">
+                  <input type="date" class="form-control" id="TxtDataNascitaPaziente" readonly value="<%=user.getDataDiNascita()%>">
                 </div>
                 <div class="col-md-6 mb-2">
                   <label for="TxtEmailPaziente" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="TxtEmailPaziente">
+                  <input type="email" class="form-control" id="TxtEmailPaziente" readonly value="<%=user.getEmail()%>">
                 </div>
                 <div class="col-md-6 mb-2">
                   <label for="TxtTelefonoPaziente" class="form-label">Telefono</label>
-                  <input type="text" class="form-control" id="TxtTelefonoPaziente">
+                  <input type="text" class="form-control" id="TxtTelefonoPaziente" readonly value="<%=user.getTelefono()%>">
                 </div>
                 <div class="col-md-12 mt-2 text-end">
                   <button type="button" class="btn btn-primary border-0 bg-yellow-dark color-brown" title="modifica">Modifica<i class="bi bi-pencil-square ms-2"></i></button>
@@ -68,54 +77,110 @@
               <button type="button" class="btn btn-outline-primary border-1 border-yellow-light color-brown" id="BtnReportAudio">Report audio</button>
               <button type="button" class="btn btn-outline-primary border-1 border-yellow-light color-brown" id="BtnDaschboard">Dashboard</button>
             </div>
+            <%
+              Collection<?> videos = (Collection<?>) request.getAttribute("video");
+              if(videos == null) response.sendRedirect("utente-control");
+              if(videos != null && videos.size() > 0) {
+            %>
             <div class="col-12" id="PnlTabellaVideo">
               <table class="table table-sm table-striped border-1 border-yellow-light" id="TblVideo">
                 <thead>
                 <tr>
                   <th scope="col" class="color-brown text-center">Media</th>
                   <th scope="col" class="color-brown text-center">Data</th>
-                  <th scope="col" class="color-brown text-center">Ora</th>
+                  <th scope="col" class="color-brown text-center">Durata</th>
                   <th scope="col" class="color-brown text-center">Emoji</th>
                 </tr>
                 </thead>
                 <tbody>
+                <%
+                  Iterator<?> iterator = videos.iterator();
+                  while (iterator.hasNext()) {
+                    Video video = (Video) iterator.next();
+                %>
                 <tr>
                   <td class="color-brown align-middle text-center p-2" style="width: 200px;">
-                    <div class="ratio ratio-16x9 bg-brown">
-                      <div>16x9</div>
-                    </div>
+                    <a href="<%=response.encodeURL("video.jsp?idUtente="+user.getIdUtente()+"&idVideo=" + video.getIdVideo())%>">
+                      <div class="ratio ratio-16x9 bg-brown">
+                        <div>16x9</div>
+                      </div>
+                    </a>
                   </th>
-                  <td class="color-brown align-middle text-center">00/00/000</td>
-                  <td class="color-brown align-middle text-center">00:00</td>
-                  <td class="color-brown align-middle text-center">:)</td>
+                  <td class="color-brown align-middle text-center"><%=video.getData()%></td>
+                  <td class="color-brown align-middle text-center"><%=video.getDurata()%></td>
+                  <td class="color-brown align-middle text-center"><%=video.getEmozioneUtente()%></td>
                 </tr>
+                <%
+                    }
+                %>
                 </tbody>
               </table>
             </div>
+            <%
+              } else {
+            %>
+            <div class="col-md-12">
+              <div class="row h-75 d-flex align-content-center">
+                <div class="col-md-12 text-center">
+                  <img src="illustrations/empty.svg" class="img-fluid my-5" alt="Nessun video presente." style="height: 240px">
+                  <h5>Non ci sono video.</h5>
+                  <p>L'utente non ha caricato alcun video.<br />Sii paziente, arriveranno presto!</p>
+                </div>
+              </div>
+            </div>
+            <%
+              }
+              Collection<?> audio = (Collection<?>) request.getAttribute("audio");
+              if(audio == null) response.sendRedirect("utente-control");
+              if(audio != null && audio.size() > 0) {
+            %>
             <div class="col-12" id="PnlTabellaAudio">
               <table class="table table-sm table-striped border-1 border-yellow-light" id="TblAudio">
                 <thead>
                 <tr>
                   <th scope="col" class="color-brown text-center">Media</th>
                   <th scope="col" class="color-brown text-center">Data</th>
-                  <th scope="col" class="color-brown text-center">Ora</th>
+                  <th scope="col" class="color-brown text-center">Durata</th>
                   <th scope="col" class="color-brown text-center">Emoji</th>
                 </tr>
                 </thead>
                 <tbody>
+                <%
+                  Iterator<?> iterator = audio.iterator();
+                  while (iterator.hasNext()) {
+                    Audio audio1 = (Audio) iterator.next();
+                %>
                 <tr>
                   <td class="color-brown align-middle text-center p-2" style="width: 200px;">
                     <div class="ratio ratio-16x9 bg-brown">
                       <div>16x9</div>
                     </div>
                   </th>
-                  <td class="color-brown align-middle text-center">00/00/000</td>
-                  <td class="color-brown align-middle text-center">00:00</td>
-                  <td class="color-brown align-middle text-center">:)</td>
+                  <td class="color-brown align-middle text-center"><%=audio1.getData()%></td>
+                  <td class="color-brown align-middle text-center"><%=audio1.getDurata()%></td>
+                  <td class="color-brown align-middle text-center"><%=audio1.getEmozioneUtente()%></td>
                 </tr>
+                <%
+                  }
+                %>
                 </tbody>
               </table>
             </div>
+            <%
+              } else {
+            %>
+            <div class="col-md-12">
+              <div class="row h-75 d-flex align-content-center">
+                <div class="col-md-12 text-center">
+                  <img src="illustrations/empty.svg" class="img-fluid my-5" alt="Nessun audio presente." style="height: 240px">
+                  <h5>Non ci sono audio.</h5>
+                  <p>L'utente non ha caricato alcun audio.<br />Sii paziente, arriveranno presto!</p>
+                </div>
+              </div>
+            </div>
+            <%
+              }
+            %>
             <div class="col-12" id="PnlDaschboard">
               <div class="row">
                 <div class="col-md-6"><h4 class="color-brown">Parametri fisici</h4></div>

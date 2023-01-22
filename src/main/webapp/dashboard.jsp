@@ -12,7 +12,7 @@
         <div class="row">
           <div class="col-12 d-flex justify-content-center align-items-center pt-5 pb-4"><img src="img/WakeApp.png" height="50px" alt="Logo WakeApp"></div>
           <div class="col-12 d-flex justify-content-center align-items-center">
-            <button type="button" class="btn btn-primary border-0 bg-yellow-dark color-brown"><i class="bi bi-people-fill me-2"></i>Lista pazienti</button>
+            <a href="<%=response.encodeURL("dashboard.jsp")%>" class="btn btn-primary border-0 bg-yellow-dark color-brown"><i class="bi bi-people-fill me-2"></i>Lista pazienti</a>
           </div>
         </div>
       </div>
@@ -75,7 +75,7 @@
                   <td class="color-brown align-middle text-center"><%=utente.getCodiceFiscale()%></td>
                   <td class="color-brown align-middle text-center"><%=utente.getDataDiNascita()%></td>
                   <td class="color-brown align-middle text-center"><%=utente.getEmail()%></td>
-                  <td class="text-end"><a href="<%=response.encodeURL("paziente.jsp?cf=" + utente.getCodiceFiscale())%>" class="btn btn-primary border-0 bg-yellow-dark color-brown btn-sm">Apri<i class="bi bi-arrow-bar-right ms-2"></i></a></td>
+                  <td class="text-end"><a href="<%=response.encodeURL("paziente.jsp?id=" + utente.getIdUtente())%>" class="btn btn-primary border-0 bg-yellow-dark color-brown btn-sm">Apri<i class="bi bi-arrow-bar-right ms-2"></i></a></td>
                 </tr>
                 <%
                   }

@@ -9,6 +9,7 @@ public class Audio {
     private String emozioneUtente;
     private String idUtente;
     private String idTesto;
+    private String path;
 
     public Audio() {}
     public Audio(Integer idAudio, Date data, String emozioneIa, String emozioneUtente, String idUtente, String idTesto) {
@@ -68,7 +69,12 @@ public class Audio {
     public void setIdTesto(String idTesto) {
         this.idTesto = idTesto;
     }
-
+    public String getPath() {
+        return path;
+    }
+    public void setPath(String idTesto) {
+        this.path = path;
+    }
     @Override
     public String toString() {
         return "Audio{" +
