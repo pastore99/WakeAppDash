@@ -5,7 +5,9 @@
 <%@ page import="beans.Audio" %>
 <%
   Utente user = (Utente) request.getAttribute("utente");
-  if(user == null) response.sendRedirect("utente-control");
+  if(user == null) {
+    response.sendRedirect("utente-control");
+  } else {
 %>
 <html>
 <head>
@@ -27,7 +29,7 @@
       <div class="col-md-11 m-0 p-0">
         <div class="container-fluid p-5">
           <div class="row mb-4 d-flex align-items-center">
-            <div class="col-1"><a class="color-brown text-decoration-none fs-5" href="<%=response.sendRedirect("dashboard.jsp")%>"><i class="bi bi-arrow-left"></i></a></div>
+            <div class="col-1"><a class="color-brown text-decoration-none fs-5" href="<%=response.encodeURL("dashboard.jsp")%>"><i class="bi bi-arrow-left"></i></a></div>
             <div class="col"><h1 class="color-brown"><b><%=user.getNome() + " " + user.getCognome()%></b></h1></div>
           </div>
 
@@ -229,3 +231,4 @@
   <script src="scripts/bootstrap.js" rel="script"></script>
 </body>
 </html>
+<% } %>

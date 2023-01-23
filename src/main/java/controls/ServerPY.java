@@ -10,40 +10,48 @@ import org.json.simple.JSONObject;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.util.Collection;
+import java.util.Collections;
 
 public class ServerPY {
     static OkHttpClient client = new OkHttpClient();
-    private static String url = "https://8d2074ee71a331.lhr.life";
+    private static String url = "http://127.0.0.1:5000";
     private static String token = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY3MTIwODA5NSwianRpIjoiYmE4NDVkNTAtZGE5Ni00N2Q4LWE1NmItNTY0MjkxZGYxNDVhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InRlc3QxQGdtYWlsLmNvbSIsIm5iZiI6MTY3MTIwODA5NX0.ZDfA5LfmvtmoigWz4Fqww3yKlhkJKbcHysi7intLwKo";
+
     public static String getServerURL() {
         return url;
     }
 
-    public static String run(String urlPath) throws IOException {
-        Request request = new Request.Builder()
-                .url(url + urlPath)
-                .addHeader("Authorization", token)
-                .build();
+    public static String run(String urlPath) {
+        try {
 
-        try (Response response = client.newCall(request).execute()) {
+            Request request = new Request.Builder()
+                    .url(url + urlPath)
+                    .addHeader("Authorization", token)
+                    .build();
+
+            Response response = client.newCall(request).execute();
             String message = response.body().string();
             message = message.replace("\\", "");
             message = message.replaceFirst("\"", "");
-            message = message.substring(0, message.length()-2);
+            String reversed = new StringBuilder(message).reverse().toString();
+            reversed = reversed.replaceFirst("\"", "");
+            message = new StringBuilder(reversed).reverse().toString();
             return message;
         } catch (Exception e) {
+            e.printStackTrace();
             return "Error: " + e.getMessage();
         }
     }
 
-    public  static Utente parseUtenteObject(JSONObject utente) {
+    public static Utente parseUtenteObject(JSONObject utente) {
         Utente bean = new Utente();
         bean.setEmail((String) utente.get("email"));
         bean.setTelefono((String) utente.get("telefono"));
         bean.setCognome((String) utente.get("cognome"));
         String dataString = (String) utente.get("data_di_nascita");
-        Date dataDate = new Date(Integer.parseInt(dataString.substring(0, 4)), Integer.parseInt(dataString.substring(6, 2)), Integer.parseInt(dataString.substring(8,2)));
-        bean.setDataDiNascita(dataDate);
+        //Date dataDate = new Date(Integer.parseInt(dataString.substring(0, 4)), Integer.parseInt(dataString.substring(6, 2)), Integer.parseInt(dataString.substring(8, 2)));
+        bean.setDataDiNascita(dataString);
         bean.setCodiceFiscale((String) utente.get("cf"));
         bean.setResidenza((String) utente.get("residenza"));
         bean.setIdUtente((String) utente.get("idutente"));
@@ -55,12 +63,12 @@ public class ServerPY {
         return bean;
     }
 
-    public  static Video parseVideoObject(JSONObject video) {
+    public static Video parseVideoObject(JSONObject video) {
         Video bean = new Video();
         Long l = (long) video.get("idVideo");
         bean.setIdVideo(l.intValue());
         String dataString = (String) video.get("data");
-        Date dataDate = new Date(Integer.parseInt(dataString.substring(0, 4)), Integer.parseInt(dataString.substring(6, 2)), Integer.parseInt(dataString.substring(8,2)));
+        Date dataDate = new Date(Integer.parseInt(dataString.substring(0, 4)), Integer.parseInt(dataString.substring(6, 2)), Integer.parseInt(dataString.substring(8, 2)));
         bean.setData(dataDate);
         l = (long) video.get("durata");
         bean.setDurata(l.intValue());
@@ -72,12 +80,12 @@ public class ServerPY {
         return bean;
     }
 
-    public  static Audio parseAudioObject(JSONObject audio) {
+    public static Audio parseAudioObject(JSONObject audio) {
         Audio bean = new Audio();
         Long l = (long) audio.get("idaudio");
         bean.setIdAudio(l.intValue());
         String dataString = (String) audio.get("data");
-        Date dataDate = new Date(Integer.parseInt(dataString.substring(0, 4)), Integer.parseInt(dataString.substring(6, 2)), Integer.parseInt(dataString.substring(8,2)));
+        Date dataDate = new Date(Integer.parseInt(dataString.substring(0, 4)), Integer.parseInt(dataString.substring(6, 2)), Integer.parseInt(dataString.substring(8, 2)));
         bean.setData(dataDate);
         l = (long) audio.get("durata");
         bean.setDurata(l.intValue());

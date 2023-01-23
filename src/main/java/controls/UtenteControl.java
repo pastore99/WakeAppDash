@@ -30,13 +30,13 @@ public class UtenteControl extends HttpServlet {
             Object obj;
 
             //Utente
-            String utenteResult = ServerPY.run("/api/user?id=" + id);
+            String utenteResult = ServerPY.run("/api/user?user_id=" + id);
             obj = parser.parse(utenteResult);
             Utente utente = ServerPY.parseUtenteObject((JSONObject) obj);
             request.setAttribute("utente", utente);
 
             //Video
-            String videoResult = ServerPY.run("/api/video?id=" + id);
+            String videoResult = ServerPY.run("/api/video?user_id=" + id);
             obj = parser.parse(videoResult);
             JSONArray videoList = (JSONArray) obj;
             Collection<Video> videos = new LinkedList<>();
@@ -44,7 +44,7 @@ public class UtenteControl extends HttpServlet {
             request.setAttribute("video", videos);
 
             //Audio
-            String audioResult = ServerPY.run("/api/audio?id" + id);
+            String audioResult = ServerPY.run("/api/audio?user_id" + id);
             obj = parser.parse(audioResult);
             JSONArray audioList = (JSONArray) obj;
             Collection<Audio> audio = new LinkedList<>();
@@ -59,7 +59,7 @@ public class UtenteControl extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("paziente.jsp");
+        RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/paziente.jsp");
         dispatcher.forward(request, response);
     }
 

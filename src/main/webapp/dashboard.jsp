@@ -75,7 +75,7 @@
                   <td class="color-brown align-middle text-center"><%=utente.getCodiceFiscale()%></td>
                   <td class="color-brown align-middle text-center"><%=utente.getDataDiNascita()%></td>
                   <td class="color-brown align-middle text-center"><%=utente.getEmail()%></td>
-                  <td class="text-end"><a href="<%=response.encodeURL("paziente.jsp?id=" + utente.getIdUtente())%>" class="btn btn-primary border-0 bg-yellow-dark color-brown btn-sm">Apri<i class="bi bi-arrow-bar-right ms-2"></i></a></td>
+                  <td class="text-end"><a href="<%=response.encodeURL("utente-control?id=" + utente.getIdUtente())%>" class="btn btn-primary border-0 bg-yellow-dark color-brown btn-sm">Apri<i class="bi bi-arrow-bar-right ms-2"></i></a></td>
                 </tr>
                 <%
                   }

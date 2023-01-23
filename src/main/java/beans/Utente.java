@@ -8,14 +8,14 @@ public class Utente {
     private String telefono;
     private String nome;
     private String cognome;
-    private Date dataDiNascita;
+    private String dataDiNascita;
     private String residenza;
     private String password;
     private Integer tipo;
     private String key;
 
     public Utente() {}
-    public Utente(String idUtente, String codiceFiscale, String email, String telefono, String nome, String cognome, Date dataDiNascita, String residenza, String password, Integer tipo, String key) {
+    public Utente(String idUtente, String codiceFiscale, String email, String telefono, String nome, String cognome, String dataDiNascita, String residenza, String password, Integer tipo, String key) {
         this.idUtente = idUtente;
         this.codiceFiscale = codiceFiscale;
         this.email = email;
@@ -71,10 +71,10 @@ public class Utente {
         this.cognome = cognome;
     }
 
-    public Date getDataDiNascita() {
+    public String getDataDiNascita() {
         return dataDiNascita;
     }
-    public void setDataDiNascita(Date dataDiNascita) {
+    public void setDataDiNascita(String dataDiNascita) {
         this.dataDiNascita = dataDiNascita;
     }
 
