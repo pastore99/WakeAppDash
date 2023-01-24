@@ -3,7 +3,7 @@ import java.sql.Date;
 
 public class Audio {
     private Integer idAudio;
-    private Date data;
+    private String data;
     private Integer durata;
     private String emozioneIa;
     private String emozioneUtente;
@@ -12,7 +12,7 @@ public class Audio {
     private String path;
 
     public Audio() {}
-    public Audio(Integer idAudio, Date data, String emozioneIa, String emozioneUtente, String idUtente, String idTesto) {
+    public Audio(Integer idAudio, String data, String emozioneIa, String emozioneUtente, String idUtente, String idTesto) {
         this.idAudio = idAudio;
         this. data = data;
         this.emozioneIa = emozioneIa;
@@ -28,10 +28,10 @@ public class Audio {
         this.idAudio = idAudio;
     }
 
-    public Date getData() {
+    public String getData() {
         return data;
     }
-    public void setData(Date data) {
+    public void setData(String data) {
         this.data = data;
     }
 

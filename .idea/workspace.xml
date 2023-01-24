@@ -9,14 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d79c946a-99fc-437c-957f-851669e44686" name="Changes" comment="Implementata connessione al WS APIRest per recupero dati dal database">
+    <list default="true" id="d79c946a-99fc-437c-957f-851669e44686" name="Changes" comment="Aggiunte dipendenze, fix JSON Parser lista utenti e altro">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/beans/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/beans/Utente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/beans/Audio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/beans/Audio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controls/ServerPY.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controls/ServerPY.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controls/UtenteControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controls/UtenteControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/paziente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/paziente.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,28 +47,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/nicol/IdeaProjects/WakeAppDash/src/main/java/beans",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.32858416",
-    "settings.editor.selected.configurable": "project.propDebugger",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nicol/IdeaProjects/WakeAppDash/src/main/java/beans&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.32858416&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propDebugger&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\nicol\IdeaProjects\WakeAppDash\src\main\java\beans" />
@@ -103,7 +100,7 @@
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="63342" />
+        <option name="DEBUG_PORT" value="63343" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -192,6 +189,8 @@
       <workItem from="1674307398674" duration="9558000" />
       <workItem from="1674382711078" duration="7332000" />
       <workItem from="1674474106347" duration="5082000" />
+      <workItem from="1674481393164" duration="86000" />
+      <workItem from="1674556792682" duration="3842000" />
     </task>
     <task id="LOCAL-00001" summary="Inserite senzioni">
       <created>1670689257291</created>
@@ -221,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674317146201</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Aggiunte dipendenze, fix JSON Parser lista utenti e altro">
+      <created>1674481472143</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1674481472143</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,116 +247,12 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Inserite senzioni" />
     <MESSAGE value="Implementata connessione al WS APIRest per recupero dati dal database" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementata connessione al WS APIRest per recupero dati dal database" />
+    <MESSAGE value="Aggiunte dipendenze, fix JSON Parser lista utenti e altro" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunte dipendenze, fix JSON Parser lista utenti e altro" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/UtentiControl.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
-          <line>59</line>
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
-          <line>62</line>
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/webapp/paziente.jsp</url>
           <line>31</line>
@@ -397,27 +299,47 @@
           <option name="timeStamp" value="65" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/ServerPY.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="66" />
+          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="71" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/ServerPY.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
           <line>32</line>
-          <option name="timeStamp" value="67" />
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="78" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controls/ServerPY.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="68" />
+          <line>34</line>
+          <option name="timeStamp" value="81" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controls/ServerPY.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="69" />
+          <line>36</line>
+          <option name="timeStamp" value="87" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="org.apache.catalina.connector.Response" memberName="applicationResponse" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

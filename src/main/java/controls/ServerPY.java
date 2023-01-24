@@ -28,15 +28,12 @@ public class ServerPY {
             Request request = new Request.Builder()
                     .url(url + urlPath)
                     .addHeader("Authorization", token)
+                    .addHeader("Content-Type", "application/json; charset=utf-8")
                     .build();
 
             Response response = client.newCall(request).execute();
             String message = response.body().string();
-            message = message.replace("\\", "");
-            message = message.replaceFirst("\"", "");
-            String reversed = new StringBuilder(message).reverse().toString();
-            reversed = reversed.replaceFirst("\"", "");
-            message = new StringBuilder(reversed).reverse().toString();
+
             return message;
         } catch (Exception e) {
             e.printStackTrace();
@@ -85,8 +82,7 @@ public class ServerPY {
         Long l = (long) audio.get("idaudio");
         bean.setIdAudio(l.intValue());
         String dataString = (String) audio.get("data");
-        Date dataDate = new Date(Integer.parseInt(dataString.substring(0, 4)), Integer.parseInt(dataString.substring(6, 2)), Integer.parseInt(dataString.substring(8, 2)));
-        bean.setData(dataDate);
+        bean.setData(dataString);
         l = (long) audio.get("durata");
         bean.setDurata(l.intValue());
         bean.setEmozioneIa((String) audio.get("emozioneIA"));

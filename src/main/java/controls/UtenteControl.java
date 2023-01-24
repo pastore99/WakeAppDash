@@ -44,7 +44,7 @@ public class UtenteControl extends HttpServlet {
             request.setAttribute("video", videos);
 
             //Audio
-            String audioResult = ServerPY.run("/api/audio?user_id" + id);
+            String audioResult = ServerPY.run("/api/audio?user_id=" + id);
             obj = parser.parse(audioResult);
             JSONArray audioList = (JSONArray) obj;
             Collection<Audio> audio = new LinkedList<>();
