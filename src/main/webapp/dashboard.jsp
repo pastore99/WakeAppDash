@@ -8,15 +8,17 @@
 <body>
   <div class="p-0 m-0 h-100">
     <div class="row p-0 m-0 h-100">
-      <div class="col-md-1 m-0 p-0 border-1 border-end">
+      <div class="col-md-2 m-0 p-0 bg-dark-custom">
         <div class="row">
-          <div class="col-12 d-flex justify-content-center align-items-center pt-5 pb-4"><img src="img/WakeApp.png" height="50px" alt="Logo WakeApp"></div>
-          <div class="col-12 d-flex justify-content-center align-items-center">
-            <a href="<%=response.encodeURL("dashboard.jsp")%>" class="btn btn-primary border-0 bg-yellow-dark color-brown"><i class="bi bi-people-fill me-2"></i>Lista pazienti</a>
+          <div class="col-12 d-flex justify-content-center align-items-center pt-5 pb-4"><img src="img/WakeApp.svg" height="50px" alt="Logo WakeApp"></div>
+          <div class="col-12 d-flex justify-content-center">
+            <a href="<%=response.encodeURL("dashboard.jsp")%>" class="btn btn-primary border-0 bg-yellow-dark color-brown w-100"><i class="bi bi-people-fill me-2"></i>Lista pazienti</a>
+            <a class="btn btn-primary border-0 bg-yellow-dark color-brown w-100"><i class="bi bi-smartwatch me-2"></i>Dispositivi</a>
+            <a class="btn btn-primary border-0 bg-yellow-dark color-brown w-100"><i class="bi bi-gear me-2"></i>Impostazioni</a>
           </div>
         </div>
       </div>
-      <div class="col-md-11 m-0 p-0">
+      <div class="col-md-10 m-0 p-0">
         <div class="container-fluid p-5">
           <div class="row mb-4"><h1 class="color-brown"><b>Lista pazienti</b></h1></div>
 

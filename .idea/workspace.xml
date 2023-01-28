@@ -9,11 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d79c946a-99fc-437c-957f-851669e44686" name="Changes" comment="Aggiunte dipendenze, fix JSON Parser lista utenti e altro">
+    <list default="true" id="d79c946a-99fc-437c-957f-851669e44686" name="Changes" comment="Implementata connessione al WS APIRest per recupero dati dal database">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/WPWakeApp.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/WakeApp.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/beans/Audio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/beans/Audio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controls/ServerPY.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controls/ServerPY.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controls/UtenteControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controls/UtenteControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/WakeApp.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/img/WakeAppOLD.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/paziente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/paziente.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/styles/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/styles/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/video.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/video.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -62,10 +66,10 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.32858416&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propDebugger&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -74,8 +78,8 @@
       <recent name="C:\Users\nicol\IdeaProjects\WakeAppDash\src\main\java\beans" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\nicol\IdeaProjects\WakeAppDash\src\main\webapp\illustrations" />
       <recent name="C:\Users\nicol\IdeaProjects\WakeAppDash\src\main\webapp\img" />
+      <recent name="C:\Users\nicol\IdeaProjects\WakeAppDash\src\main\webapp\illustrations" />
       <recent name="C:\Users\nicol\IdeaProjects\WakeAppDash\src\main\webapp\scripts" />
       <recent name="C:\Users\nicol\IdeaProjects\WakeAppDash\src\main\webapp\styles" />
     </key>
@@ -92,15 +96,14 @@
       </deployment>
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="37922037-c5af-41b7-9b65-1e943c934d48" />
-        <option name="DEPLOY_TOMCAT_APPS" value="true" />
       </server-settings>
-      <log_file alias="Tomcat Manager Log" path="%IDEA_RUN:CATALINA_BASE%/logs/manager.*" />
-      <log_file alias="Tomcat Host Manager Log" path="%IDEA_RUN:CATALINA_BASE%/logs/host-manager.*" />
-      <log_file alias="Tomcat Localhost Access Log" path="%IDEA_RUN:CATALINA_BASE%/logs/localhost_access_log.*" />
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="63343" />
+        <option name="DEBUG_PORT" value="49829" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -188,9 +191,6 @@
       <workItem from="1674293075602" duration="6951000" />
       <workItem from="1674307398674" duration="9558000" />
       <workItem from="1674382711078" duration="7332000" />
-      <workItem from="1674474106347" duration="5082000" />
-      <workItem from="1674481393164" duration="86000" />
-      <workItem from="1674556792682" duration="3842000" />
     </task>
     <task id="LOCAL-00001" summary="Inserite senzioni">
       <created>1670689257291</created>
@@ -220,14 +220,7 @@
       <option name="project" value="LOCAL" />
       <updated>1674317146201</updated>
     </task>
-    <task id="LOCAL-00005" summary="Aggiunte dipendenze, fix JSON Parser lista utenti e altro">
-      <created>1674481472143</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1674481472143</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,99 +240,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Inserite senzioni" />
     <MESSAGE value="Implementata connessione al WS APIRest per recupero dati dal database" />
-    <MESSAGE value="Aggiunte dipendenze, fix JSON Parser lista utenti e altro" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunte dipendenze, fix JSON Parser lista utenti e altro" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/paziente.jsp</url>
-          <line>31</line>
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/paziente.jsp</url>
-          <line>32</line>
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/paziente.jsp</url>
-          <line>30</line>
-          <option name="timeStamp" value="58" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/paziente.jsp</url>
-          <line>33</line>
-          <option name="timeStamp" value="59" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/paziente.jsp</url>
-          <line>28</line>
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/paziente.jsp</url>
-          <line>29</line>
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/paziente.jsp</url>
-          <line>8</line>
-          <option name="timeStamp" value="62" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/paziente.jsp</url>
-          <line>6</line>
-          <option name="timeStamp" value="64" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/paziente.jsp</url>
-          <line>7</line>
-          <option name="timeStamp" value="65" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="71" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="72" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="76" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="77" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
-          <line>59</line>
-          <option name="timeStamp" value="78" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/ServerPY.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="81" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/ServerPY.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="87" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-    <pin-to-top-manager>
-      <pinned-members>
-        <PinnedItemInfo parentTag="org.apache.catalina.connector.Response" memberName="applicationResponse" />
-      </pinned-members>
-    </pin-to-top-manager>
+    <option name="LAST_COMMIT_MESSAGE" value="Implementata connessione al WS APIRest per recupero dati dal database" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

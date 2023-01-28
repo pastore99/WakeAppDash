@@ -1743,7 +1743,7 @@ progress {
   --bs-table-border-color: var(--bs-border-color);
   --bs-table-accent-bg: transparent;
   --bs-table-striped-color: var(--bs-body-color);
-  --bs-table-striped-bg: #FFF2E1;
+  --bs-table-striped-bg: rgb(49, 255, 243, 0.1);
   --bs-table-active-color: var(--bs-body-color);
   --bs-table-active-bg: rgba(0, 0, 0, 0.1);
   --bs-table-hover-color: var(--bs-body-color);
@@ -10896,4 +10896,45 @@ textarea.form-control-lg {
   position: fixed;
   bottom: 50px;
   right: 50px;
+}
+
+.bg-dark-custom {
+  background-color: #1E1E1E !important;
+}
+
+.color-dark-custom {
+  color: #1E1E1E !important;
+}
+
+.btn-menu {
+  display: inline-block;
+  padding: 10px 28px;
+  font-family: var(--bs-btn-font-family);
+  font-size: 18px;
+  font-weight: var(--bs-btn-font-weight);
+  line-height: var(--bs-btn-line-height);
+  color: #DBDBDB;
+  text-align: left;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  border: 0;
+  background-color: #2B4B48;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn-menu:hover, .btn-menu:focus, .btn-menu:active, .btn-menu-active {
+  color: #1E1E1E;
+  background-color: #31FFF3;
+}
+
+.bg-img {
+  background-image: url("../img/WPWakeApp.svg");
+  background-repeat: no-repeat;
+  background-size: inherit;
+  background-position-x: right;
+  background-position-y: top;
 }
