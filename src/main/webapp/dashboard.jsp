@@ -10,36 +10,24 @@
     <div class="row p-0 m-0 h-100">
       <div class="col-md-2 m-0 p-0 bg-dark-custom">
         <div class="row">
-          <div class="col-12 d-flex justify-content-center align-items-center pt-5 pb-4"><img src="img/WakeApp.svg" height="50px" alt="Logo WakeApp"></div>
-          <div class="col-12 d-flex justify-content-center">
-            <a href="<%=response.encodeURL("dashboard.jsp")%>" class="btn btn-primary border-0 bg-yellow-dark color-brown w-100"><i class="bi bi-people-fill me-2"></i>Lista pazienti</a>
-            <a class="btn btn-primary border-0 bg-yellow-dark color-brown w-100"><i class="bi bi-smartwatch me-2"></i>Dispositivi</a>
-            <a class="btn btn-primary border-0 bg-yellow-dark color-brown w-100"><i class="bi bi-gear me-2"></i>Impostazioni</a>
+          <div class="col-12 d-flex justify-content-center align-items-center pt-5 pb-4"><img src="img/WakeApp.svg" height="120px" alt="Logo WakeApp"></div>
+          <div class="col-12">
+            <a href="<%=response.encodeURL("dashboard.jsp")%>" class="btn-menu w-100"><i class="bi bi-people-fill me-2"></i>Lista pazienti</a>
+            <a class="btn-menu w-100"><i class="bi bi-smartwatch me-2"></i>Dispositivi</a>
+            <a class="btn-menu w-100"><i class="bi bi-gear me-2"></i>Impostazioni</a>
           </div>
         </div>
       </div>
-      <div class="col-md-10 m-0 p-0">
+      <div class="col-md-10 m-0 p-0 bg-img">
         <div class="container-fluid p-5">
-          <div class="row mb-4"><h1 class="color-brown"><b>Lista pazienti</b></h1></div>
+          <div class="row mb-4"><h1 class="color-dark-custom"><b>Lista pazienti</b></h1></div>
 
           <!-- Filtri per ricerca e ordinamento -->
-          <form class="row mb-4">
-            <div class="col-md-4">
-              <div class="input-group mb-3">
-                <span class="input-group-text border-0 rounded-5 rounded-end bg-yellow-dark" id="Cerca"><i class="bi bi-search color-brown"></i></span>
-                <input type="text" class="form-control border-0 rounded-5 rounded-start bg-yellow-dark" aria-label="Cerca..." aria-describedby="Cerca">
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="input-group mb-3">
-                <span class="input-group-text border-0 rounded-5 rounded-end bg-yellow-light" id="Ordina"><i class="bi bi-filter-left color-brown"></i></span>
-                <input type="text" class="form-control border-0 rounded-5 rounded-start bg-yellow-light" aria-label="Ordina..." aria-describedby="Ordina">
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="input-group mb-3">
-                <span class="input-group-text border-0 rounded-5 rounded-end bg-yellow-light" id="Filtra"><i class="bi bi-funnel color-brown"></i></span>
-                <input type="text" class="form-control border-0 rounded-5 rounded-start bg-yellow-light" aria-label="Filtra..." aria-describedby="Filtra">
+          <form class="row m-0">
+            <div class="col-md-4 p-0">
+              <div class="input-group border border-1 rounded-2">
+                <span class="input-group-text border-0 rounded-1 bg-white" id="Cerca"><i class="bi bi-search color-brown"></i></span>
+                <input type="text" class="form-control border-0 rounded-1 text-end" aria-label="Cerca..." aria-describedby="Cerca" placeholder="Cerca">
               </div>
             </div>
           </form>
@@ -52,17 +40,17 @@
             if (utenti != null && utenti.size() > 0) {
           %>
           <div class="row">
-            <div class="col-12"><p id="LblNumeroPazienti" class="color-brown">Ci sono <b>x</b> pazienti</p></div>
+            <div class="col-12 text-end"><p id="LblNumeroPazienti" class="color-dark-custom mb-1"><b>x</b> pazienti</p></div>
             <div class="col-12">
-              <table class="table table-sm table-striped border-1 border-yellow-light">
+              <table class="table table-sm table-striped border border-1">
                 <thead>
                 <tr>
-                  <th scope="col" class="color-brown text-center">Nome</th>
-                  <th scope="col" class="color-brown text-center">Cognome</th>
-                  <th scope="col" class="color-brown text-center">Codice fiscale</th>
-                  <th scope="col" class="color-brown text-center">Data di nascita</th>
-                  <th scope="col" class="color-brown text-center">Email</th>
-                  <th scope="col" class="color-brown text-center"></th>
+                  <th scope="col" class="text-center">Nome</th>
+                  <th scope="col" class="text-center">Cognome</th>
+                  <th scope="col" class="text-center">Codice fiscale</th>
+                  <th scope="col" class="text-center">Data di nascita</th>
+                  <th scope="col" class="text-center">Email</th>
+                  <th scope="col" class="text-center"></th>
                 </tr>
                 </thead>
                 <tbody>

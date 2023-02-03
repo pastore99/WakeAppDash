@@ -27,6 +27,49 @@
     </div>
     <div class="col-md-10 m-0 p-0 bg-img">
       <div class="container-fluid p-5">
+        <div class="row mb-4 d-flex align-items-center">
+          <div class="col-12"><p class="mb-0 color-dark-custom">Anagrafica</p></div>
+          <div class="col-12"><a class="color-dark-custom text-decoration-none fs-5"><i class="bi bi-arrow-left"></i></a><h1 class="color-dark-custom"><b>Nome Cognome</b></h1></div>
+        </div>
+
+        <div class="row p-4 rounded-3 mb-4 bg-violette">
+          <div class="col-md-2 p-4">
+            <img src="img/user.svg" height="100%" width="100%">
+          </div>
+          <div class="col-md-9">
+            <form class="row">
+              <div class="col-md-6 mb-2">
+                <label for="TxtNomePaziente" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="TxtNomePaziente" readonly value="Nome">
+              </div>
+              <div class="col-md-6 mb-2">
+                <label for="TxtCognomePaziente" class="form-label">Cognome</label>
+                <input type="text" class="form-control" id="TxtCognomePaziente" readonly value="Cognome">
+              </div>
+              <div class="col-md-6 mb-2">
+                <label for="TxtIndirizzoPaziente" class="form-label">Indirizzo</label>
+                <input type="text" class="form-control" id="TxtIndirizzoPaziente" readonly value="Indirizzo">
+              </div>
+              <div class="col-md-6 mb-2">
+                <label for="TxtDataNascitaPaziente" class="form-label">Data di nascita</label>
+                <input type="date" class="form-control" id="TxtDataNascitaPaziente" readonly value="01/01/0000">
+              </div>
+              <div class="col-md-6 mb-2">
+                <label for="TxtEmailPaziente" class="form-label">Email</label>
+                <input type="email" class="form-control" id="TxtEmailPaziente" readonly value="nome.cognomeemail.it">
+              </div>
+              <div class="col-md-6 mb-2">
+                <label for="TxtTelefonoPaziente" class="form-label">Telefono</label>
+                <input type="text" class="form-control" id="TxtTelefonoPaziente" readonly value="333 333 3333">
+              </div>
+            </form>
+          </div>
+          <div class="col text-end">
+            <a class="color-dark-custom text-decoration-none fs-5 rounded-circle bg-light-green px-2 py-1"><i class="bi bi-pencil-square"></i></a>
+          </div>
+        </div>
+
+
         <div class="row mb-4"><h1 class="color-dark-custom"><b>Lista pazienti</b></h1></div>
 
         <!-- Filtri per ricerca e ordinamento -->
@@ -48,7 +91,7 @@
               <thead>
               <tr>
                 <th scope="col" class="text-center">NOME</th>
-                <th scope="col" class="text-center">COGNOME</th>
+                <th scope="col" class="text-center">COGNOME</th
                 <th scope="col" class="text-center">CODICE FISCALE</th>
                 <th scope="col" class="text-center">DATA DI NASCITA</th>
                 <th scope="col" class="text-center">EMAIL</th>

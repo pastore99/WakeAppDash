@@ -10938,3 +10938,11 @@ textarea.form-control-lg {
   background-position-x: right;
   background-position-y: top;
 }
+
+.bg-violette {
+  background-color: rgb(144, 115, 211, 0.4) !important;
+}
+
+.bg-light-green {
+  background-color: #31FFF3 !important;
+}

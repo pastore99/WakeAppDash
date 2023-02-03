@@ -19,23 +19,28 @@
     <div class="row p-0 m-0 h-100">
       <div class="col-md-1 m-0 p-0 border-1 border-end">
         <div class="row">
-          <div class="col-12 d-flex justify-content-center align-items-center pt-5 pb-4"><img src="img/WakeAppOLD.png" height="50px" alt="Logo WakeApp"></div>
-          <div class="col-12 d-flex justify-content-center align-items-center">
-            <a href="<%=response.encodeURL("dashboard.jsp")%>" class="btn btn-primary border-0 bg-yellow-dark color-brown"><i class="bi bi-people-fill me-2"></i>Lista pazienti</a>
+          <div class="col-12 d-flex justify-content-center align-items-center pt-5 pb-4"><img src="img/WakeApp.svg" height="120px" alt="Logo WakeApp"></div>
+          <div class="col-12">
+            <a href="<%=response.encodeURL("dashboard.jsp")%>" class="btn-menu btn-menu-active w-100"><i class="bi bi-people-fill me-2"></i>Lista pazienti</a>
+            <a class="btn-menu w-100"><i class="bi bi-smartwatch me-2"></i>Dispositivi</a>
+            <a class="btn-menu w-100"><i class="bi bi-gear me-2"></i>Impostazioni</a>
           </div>
         </div>
       </div>
-      <div class="col-md-11 m-0 p-0">
+      <div class="col-md-11 m-0 p-0 bg-img">
         <div class="container-fluid p-5">
           <div class="row mb-4 d-flex align-items-center">
-            <div class="col-1"><a class="color-brown text-decoration-none fs-5" href="<%=response.encodeURL("paziente.jsp?id="+user.getIdUtente())%>"><i class="bi bi-arrow-left"></i></a></div>
-            <div class="col"><h1 class="color-brown"><b><%=user.getNome() + " " + user.getCognome()%></b></h1></div>
+            <div class="col-12"><h6 class="mb-0 color-dark-custom ms-5">Video</h6></div>
+            <div class="col-12 d-flex align-items-center">
+              <a class="color-dark-custom text-decoration-none fs-5 d-inline me-2" href="<%=response.encodeURL("paziente.jsp?id="+user.getIdUtente())%>"><i class="bi bi-arrow-left"></i></a>
+              <h1 class="color-dark-custom d-inline"><b><%=user.getNome() + " " + user.getCognome()%></b></h1>
+            </div>
           </div>
 
           <!-- Video -->
-          <div class="row bg-brown p-2">
+          <div class="row bg-violette p-2">
             <div class="col-12 d-flex justify-content-center">
-              <div class="ratio ratio-16x9 bg-yellow-dark w-50">
+              <div class="ratio ratio-16x9 bg-violette w-50">
                 <div>16x9</div>
               </div>
             </div>
@@ -46,20 +51,20 @@
           <div class="row my-4">
             <div class="col-md-6 text-center">
               <img src="img/Happy.svg" alt="Happy" height="120px">
-              <p class="color-brown fs-4">Utente</p>
+              <p class="color-dark-custom fs-4">Utente</p>
             </div>
             <div class="col-md-6 text-center">
               <img src="img/Sad.svg" alt="Sad" height="120px">
-              <span class="badge rounded-pill bg-yellow-light color-brown">100%</span>
-              <p class="color-brown fs-4">Intelligenza artificiale</p>
+              <span class="badge rounded-pill bg-yellow-light color-dark-custom">100%</span>
+              <p class="color-dark-custom fs-4">Intelligenza artificiale</p>
             </div>
-            <div class="col-12"><h4 class="color-brown">Intelligenza artificiale - probabilità emozioni</h4></div>
+            <div class="col-12"><h4 class="color-dark-custom">Intelligenza artificiale - probabilità emozioni</h4></div>
             <div class="col-12 my-2">
               <div class="progress" style="height: 68px;">
-                <div class="progress-bar bg-yellow-dark" role="progressbar" aria-label="Triste" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar bg-violette" role="progressbar" aria-label="Triste" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
                   <div class="d-flex justify-content-start align-items-center">
                     <img src="img/Sad.svg" alt="Sad" height="60px" class="px-2">
-                    <p class="color-brown w-100 text-center fs-4 m-0" id="LblProgessTriste">100%</p>
+                    <p class="color-dark-custom w-100 text-center fs-4 m-0" id="LblProgessTriste">100%</p>
                   </div>
                 </div>
               </div>
@@ -67,10 +72,10 @@
 
             <div class="col-12 my-2">
               <div class="progress" style="height: 68px;">
-                <div class="progress-bar bg-yellow-dark" role="progressbar" aria-label="Arrabbiato" style="width: 68%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar bg-violette" role="progressbar" aria-label="Arrabbiato" style="width: 68%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
                   <div class="d-flex justify-content-start align-items-center">
                     <img src="img/Angry.svg" alt="Sad" height="60px" class="px-2">
-                    <p class="color-brown w-100 text-center fs-4 m-0" id="LblProgessArrabbiato">68%</p>
+                    <p class="color-dark-custom w-100 text-center fs-4 m-0" id="LblProgessArrabbiato">68%</p>
                   </div>
                 </div>
               </div>
@@ -78,10 +83,10 @@
 
             <div class="col-12 my-2">
               <div class="progress" style="height: 68px;">
-                <div class="progress-bar bg-yellow-dark" role="progressbar" aria-label="Felice" style="width: 22%;" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar bg-violette" role="progressbar" aria-label="Felice" style="width: 22%;" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100">
                   <div class="d-flex justify-content-start align-items-center">
                     <img src="img/Happy.svg" alt="Sad" height="60px" class="px-2">
-                    <p class="color-brown w-100 text-center fs-4 m-0" id="LblProgessFelice">22%</p>
+                    <p class="color-dark-custom w-100 text-center fs-4 m-0" id="LblProgessFelice">22%</p>
                   </div>
                 </div>
               </div>
@@ -89,10 +94,10 @@
 
             <div class="col-12 my-2">
               <div class="progress" style="height: 68px;">
-                <div class="progress-bar bg-yellow-dark" role="progressbar" aria-label="Felice" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar bg-violette" role="progressbar" aria-label="Felice" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
                   <div class="d-flex justify-content-start align-items-center">
                     <img src="img/Smile.svg" alt="Sad" height="60px" class="px-2">
-                    <p class="color-brown w-100 text-center fs-4 m-0" id="LblProgessSorriso">0%</p>
+                    <p class="color-dark-custom w-100 text-center fs-4 m-0" id="LblProgessSorriso">0%</p>
                   </div>
                 </div>
               </div>

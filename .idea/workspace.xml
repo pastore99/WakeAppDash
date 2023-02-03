@@ -9,15 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d79c946a-99fc-437c-957f-851669e44686" name="Changes" comment="Implementata connessione al WS APIRest per recupero dati dal database">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/WPWakeApp.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/WakeApp.svg" afterDir="false" />
+    <list default="true" id="d79c946a-99fc-437c-957f-851669e44686" name="Changes" comment="Update UI dashboard.jsp page&#10;Insert test.jsp page to testing the new UI">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/WakeApp.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/img/WakeAppOLD.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/paziente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/paziente.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/styles/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/styles/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/video.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/video.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/test.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,6 +188,7 @@
       <workItem from="1674293075602" duration="6951000" />
       <workItem from="1674307398674" duration="9558000" />
       <workItem from="1674382711078" duration="7332000" />
+      <workItem from="1675432703959" duration="1675000" />
     </task>
     <task id="LOCAL-00001" summary="Inserite senzioni">
       <created>1670689257291</created>
@@ -220,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674317146201</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update UI dashboard.jsp page&#10;Insert test.jsp page to testing the new UI">
+      <created>1674919579735</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1674919579735</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,7 +245,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Inserite senzioni" />
     <MESSAGE value="Implementata connessione al WS APIRest per recupero dati dal database" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementata connessione al WS APIRest per recupero dati dal database" />
+    <MESSAGE value="Update UI dashboard.jsp page&#10;Insert test.jsp page to testing the new UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update UI dashboard.jsp page&#10;Insert test.jsp page to testing the new UI" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
