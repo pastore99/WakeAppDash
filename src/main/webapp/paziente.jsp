@@ -154,17 +154,25 @@
                 <%
                   Iterator<?> iterator = audio.iterator();
                   while (iterator.hasNext()) {
+
                     Audio audio1 = (Audio) iterator.next();
+
                 %>
                 <tr>
                   <td class="color-dark-custom align-middle text-center p-2" style="width: 200px;">
-                    <div class="ratio ratio-16x9 bg-brown">
-                      <div>16x9</div>
-                    </div>
+
+                      <audio controls>
+
+                        <source src= <%="https://172877bd31afb1.lhr.life/api/audio/play?audio_id=" + audio1.getIdAudio()%> type="audio/wav">
+                        Your browser does not support the audio element.
+                      </audio>
+
                   </th>
                   <td class="color-dark-custom align-middle text-center"><%=audio1.getData()%></td>
                   <td class="color-dark-custom align-middle text-center"><%=audio1.getDurata()%></td>
                   <td class="color-dark-custom align-middle text-center"><%=audio1.getEmozioneUtente()%></td>
+                  <td class="text-end"><a href="<%=response.encodeURL("audio-control?idAudio=" + audio1.getIdAudio())%>" class="btn btn-primary border-0 bg-yellow-dark color-brown btn-sm">Apri<i class="bi bi-arrow-bar-right ms-2"></i></a></td>
+
                 </tr>
                 <%
                   }

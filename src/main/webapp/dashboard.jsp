@@ -133,8 +133,9 @@
               </select>
               <label for="maxRows" style="left: 10px;"> Elementi da visualizzare</label>
             </div>-->
-          <!-- Tabella lista pazienti -->
 
+
+          <!-- Tabella lista pazienti -->
           <%
             Collection<?> utenti = (Collection<?>) request.getAttribute("utenti");
             if(utenti == null) response.sendRedirect("utenti-control");
