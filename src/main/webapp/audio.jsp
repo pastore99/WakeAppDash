@@ -18,7 +18,7 @@
 <body>
   <div class="p-0 m-0 h-100">
     <div class="row p-0 m-0 h-100">
-      <div class="col-md-1 m-0 p-0 border-1 border-end">
+      <div class="col-md-2 m-0 p-0 bg-dark-custom">
         <div class="row">
           <div class="col-12 d-flex justify-content-center align-items-center pt-5 pb-4"><img src="img/WakeApp.svg" height="120px" alt="Logo WakeApp"></div>
           <div class="col-12">
@@ -28,10 +28,10 @@
           </div>
         </div>
       </div>
-      <div class="col-md-11 m-0 p-0 bg-img">
+      <div class="col-md-10 m-0 p-0 bg-img">
         <div class="container-fluid p-5">
           <div class="row mb-4 d-flex align-items-center">
-            <div class="col-12"><h6 class="mb-0 color-dark-custom ms-5">Video</h6></div>
+            <div class="col-12"><h6 class="mb-0 color-dark-custom ms-5">Audio</h6></div>
             <div class="col-12 d-flex align-items-center">
               <a class="color-dark-custom text-decoration-none fs-5 d-inline me-2" href="<%=response.encodeURL("paziente.jsp?id="+user.getIdUtente())%>"><i class="bi bi-arrow-left"></i></a>
               <h1 class="color-dark-custom d-inline"><b><%=user.getNome() + " " + user.getCognome()%></b></h1>
@@ -41,9 +41,10 @@
           <!-- Video -->
           <div class="row bg-violette p-2">
             <div class="col-12 d-flex justify-content-center">
-              <div class="ratio ratio-16x9 bg-violette w-50">
-                <div>16x9</div>
-              </div>
+              <audio controls>
+                <source src="" type="audio/mpeg">
+                Oh no, questo browser non supporta il formato audio... Per favore, riprova con un altro browser!
+              </audio>
             </div>
             <div class="col-12"><p class="text-white" id="LblDataRegistrazione">Audio registrato il <%=audio.getData()%> </p></div>
           </div>

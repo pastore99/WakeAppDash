@@ -123,17 +123,6 @@
               </div>
             </div>
           </form>
-         <!-- <div class="row p-4 bg-white rounded-3 shadow-sm">
-            <div class="col-md-6 form-floating">
-              <select class="form-select" id="maxRows" name="state" aria-label="Floating label select example">
-                <option value="5000" selected>MOSTRA TUTTO</option>
-                <option value="5">5</option>
-                <option value="10">10</option>
-                <option value="15">15</option>
-              </select>
-              <label for="maxRows" style="left: 10px;"> Elementi da visualizzare</label>
-            </div>-->
-
 
           <!-- Tabella lista pazienti -->
           <%
@@ -167,7 +156,7 @@
                   <td class="color-brown align-middle text-center"><%=utente.getCodiceFiscale()%></td>
                   <td class="color-brown align-middle text-center"><%=utente.getDataDiNascita()%></td>
                   <td class="color-brown align-middle text-center"><%=utente.getEmail()%></td>
-                  <td class="text-end"><a href="<%=response.encodeURL("utente-control?id=" + utente.getIdUtente())%>" class="btn btn-primary border-0 bg-yellow-dark color-brown btn-sm">Apri<i class="bi bi-arrow-bar-right ms-2"></i></a></td>
+                  <td class="text-end"><a href="<%=response.encodeURL("utente-control?id=" + utente.getIdUtente())%>" class="color-dark-custom text-decoration-none fs-5 rounded-circle bg-light-green px-2 py-1">Apri<i class="bi bi-arrow-bar-right ms-2"></i></a></td>
                 </tr>
                 <%
                   }
@@ -176,8 +165,8 @@
               </table>
             </div>
           </div>
-            <button id="prev">Previous</button>
-            <button id="next">Next</button>
+          <button id="prev" class="btn-menu">Precedente</button>
+          <button id="next"  class="btn-menu">Successivo</button>
           <%
             } else {
           %>
@@ -191,12 +180,22 @@
           <%
             }
           %>
+          <div class="row mt-5">
+            <div class="col-md-12 text-center">
+              <h1 class="color-dark-custom"><i class="bi bi-bell me-2"></i><b>Notifiche</b></h1>
+              <h6>Ricorda ai tuoi pazienti che è il momento di leggere un testo o registrare un video!</h6>
+            </div>
+            <div class="col-12 my-4 d-flex justify-content-evenly">
+              <a class="btn-menu" href="<%=response.encodeURL("send-notifications?type=Audio")%>"><i class="bi bi-mic me-2"></i>Leggi un testo</a>
+              <a class="btn-menu" href="<%=response.encodeURL("send-notifications?type=Video")%>">Registra un video<i class="bi bi-camera-video ms-2"></i></a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <button type="button" class="btn btn-primary bg-yellow-dark border-0 p-3 rounded-circle fixed-bottom-right fs-4" data-bs-toggle="modal" data-bs-target="#MdlInserisciPaziente">
+  <button type="button" class="btn-menu bg-light-green border-0 p-3 rounded-circle fixed-bottom-right fs-4" data-bs-toggle="modal" data-bs-target="#MdlInserisciPaziente">
     <i class="bi bi-plus color-brown"></i>
   </button>
 
@@ -254,6 +253,32 @@
           </form>
         </div>
       </div>
+    </div>
+  </div>
+
+  <%
+    Boolean send = (boolean) request.getAttribute("send");
+    if(send) {
+  
+    } else {
+
+    }
+  %>
+  <div class="toast align-items-center bg-success text-white border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        Ben fatto, le notifiche sono state inviate ai tuoi pazienti!
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+
+  <div class="toast align-items-center bg-danger text-white border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        Oh no, qualcosa è andato storto... Le notifiche non sono state inviate!
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
   </div>
 

@@ -3,9 +3,7 @@ package controls;
 import beans.Audio;
 import beans.Utente;
 import beans.Video;
-import okhttp3.Request;
-import okhttp3.Response;
-import okhttp3.OkHttpClient;
+import okhttp3.*;
 import org.json.simple.JSONObject;
 
 import java.io.IOException;
@@ -15,7 +13,7 @@ import java.util.Collections;
 
 public class ServerPY {
     static OkHttpClient client = new OkHttpClient();
-    private static String url = "http:/127.0.0.1:5000";
+    private static String url = "https://1860302308cf6f.lhr.life";
     private static String token = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY3MTIwODA5NSwianRpIjoiYmE4NDVkNTAtZGE5Ni00N2Q4LWE1NmItNTY0MjkxZGYxNDVhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InRlc3QxQGdtYWlsLmNvbSIsIm5iZiI6MTY3MTIwODA5NX0.ZDfA5LfmvtmoigWz4Fqww3yKlhkJKbcHysi7intLwKo";
 
     public static String getServerURL() {
@@ -91,5 +89,28 @@ public class ServerPY {
         bean.setIdUtente((String) audio.get("idUtente"));
         bean.setPath((String) audio.get("path"));
         return bean;
+    }
+
+    //Type = "Video" or "Audio"
+    public static Boolean sendNotifications(String urlPath, String type) {
+        try {
+            RequestBody formBody = new FormBody.Builder()
+                    .add("type", type)
+                    .build();
+
+            Request request = new Request.Builder()
+                    .url(url + urlPath)
+                    .addHeader("Authorization", token)
+                    .addHeader("Content-Type", "application/json; charset=utf-8")
+                    .post(formBody)
+                    .build();
+
+            Response response = client.newCall(request).execute();
+            if (response.code() == 200 || response.code() == 201) return true;
+            else return false;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 }

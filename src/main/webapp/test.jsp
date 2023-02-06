@@ -70,7 +70,16 @@
         </div>
 
 
-        <div class="row mb-4"><h1 class="color-dark-custom"><b>Lista pazienti</b></h1></div>
+        <div class="row mb-4">
+          <div class="col-md-12 text-center">
+            <h1 class="color-dark-custom"><i class="bi bi-bell me-2"></i><b>Notifiche</b></h1>
+            <h6>Ricorda ai tuoi pazienti che è il momento di leggere un testo o registrare un video!</h6>
+          </div>
+          <div class="col-12 d-flex justify-content-evenly">
+            <a class="btn-menu"><i class="bi bi-mic me-2"></i>Leggi un testo</a>
+            <a class="btn-menu">Registra un video<i class="bi bi-camera-video ms-2"></i></a>
+          </div>
+        </div>
 
         <!-- Filtri per ricerca e ordinamento -->
         <form class="row m-0">

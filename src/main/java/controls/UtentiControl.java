@@ -36,6 +36,11 @@ public class UtentiControl extends HttpServlet {
             Collection<Utente> utenti = new LinkedList<>();
             utentiList.forEach(emp -> utenti.add(ServerPY.parseUtenteObject((JSONObject) emp)));
             req.setAttribute("utenti", utenti);
+
+            Boolean send = (Boolean) req.getAttribute("send");
+            if(send != null) {
+                req.setAttribute("send", send);
+            }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

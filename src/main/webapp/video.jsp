@@ -40,9 +40,10 @@
           <!-- Video -->
           <div class="row bg-violette p-2">
             <div class="col-12 d-flex justify-content-center">
-              <div class="ratio ratio-16x9 bg-violette w-50">
-                <div>16x9</div>
-              </div>
+              <video width="1280" height="720" controls>
+                <source src="movie.mp4" type="video/mp4">
+                Oh no, questo browser non supporta il formato video... Per favore, riprova con un altro browser!
+              </video>
             </div>
             <div class="col-12"><p class="text-white" id="LblDataRegistrazione">Video registrato il <%=video.getData()%> alle <%=video.getOra()%></p></div>
           </div>

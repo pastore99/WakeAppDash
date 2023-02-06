@@ -5,8 +5,8 @@ public class Video {
     private Integer idVideo;
     private Date data;
     private Integer durata;
-    private  String emozioneIa;
-    private String emozioneUtente;
+    private  String emozioneIa; //JSON
+    private String emozioneUtente; //Stringa
     private String ora;
     private String idUtente;
     private String path;

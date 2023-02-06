@@ -18,7 +18,7 @@
 <body>
   <div class="p-0 m-0 h-100">
     <div class="row p-0 m-0 h-100">
-      <div class="col-md-1 m-0 p-0 border-1 border-end">
+      <div class="col-md-2 m-0 p-0 bg-dark-custom">
         <div class="row">
           <div class="col-12 d-flex justify-content-center align-items-center pt-5 pb-4"><img src="img/WakeApp.svg" height="120px" alt="Logo WakeApp"></div>
           <div class="col-12">
@@ -28,7 +28,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-11 m-0 p-0 bg-img">
+      <div class="col-md-10 m-0 p-0 bg-img">
         <div class="container-fluid p-5">
           <div class="row mb-4 d-flex align-items-center">
             <div class="col-12"><h6 class="mb-0 color-dark-custom ms-5">Anagrafica</h6></div>
@@ -79,9 +79,9 @@
           <!-- Tabella report -->
           <div class="row">
             <div class="col-12 mb-4">
-              <button type="button" class="btn-menu" id="BtnReportVideo">Report video</button>
-              <button type="button" class="btn-menu" id="BtnReportAudio">Report audio</button>
-              <button type="button" class="btn-menu" id="BtnDaschboard">Dashboard</button>
+              <button type="button" class="btn-menu btn-menu-active" id="BtnReportVideo" onclick="showVideo()">Report video</button>
+              <button type="button" class="btn-menu" id="BtnReportAudio" onclick="showAudio()">Report audio</button>
+              <button type="button" class="btn-menu" id="BtnDaschboard" onclick="showParametri()">Dashboard</button>
             </div>
             <%
               Collection<?> videos = (Collection<?>) request.getAttribute("video");
@@ -125,7 +125,7 @@
             <%
               } else {
             %>
-            <div class="col-md-12">
+            <div class="col-md-12" id="PnlNoVideo">
               <div class="row h-75 d-flex align-content-center">
                 <div class="col-md-12 text-center">
                   <img src="illustrations/empty.svg" class="img-fluid my-5" alt="Nessun video presente." style="height: 240px">
@@ -183,7 +183,7 @@
             <%
               } else {
             %>
-            <div class="col-md-12">
+            <div class="col-md-12" id="PnlNoAudio">
               <div class="row h-75 d-flex align-content-center">
                 <div class="col-md-12 text-center">
                   <img src="illustrations/empty.svg" class="img-fluid my-5" alt="Nessun audio presente." style="height: 240px">
@@ -241,6 +241,7 @@
   </div>
 
   <script src="scripts/bootstrap.js" rel="script"></script>
+  <script src="scripts/script.js" rel="script"></script>
 </body>
 </html>
 <% } %>
