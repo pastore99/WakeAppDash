@@ -15,7 +15,7 @@ import java.util.Collections;
 
 public class ServerPY {
     static OkHttpClient client = new OkHttpClient();
-    private static String url = "http://127.0.0.1:5000";
+    private static String url = "https://6c6d8413f1772d.lhr.life";
     private static String token = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY3MTIwODA5NSwianRpIjoiYmE4NDVkNTAtZGE5Ni00N2Q4LWE1NmItNTY0MjkxZGYxNDVhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InRlc3QxQGdtYWlsLmNvbSIsIm5iZiI6MTY3MTIwODA5NX0.ZDfA5LfmvtmoigWz4Fqww3yKlhkJKbcHysi7intLwKo";
 
     public static String getServerURL() {

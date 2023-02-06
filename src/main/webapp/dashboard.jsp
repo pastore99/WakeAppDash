@@ -4,6 +4,98 @@
   <title>Dashboard</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
   <link rel="stylesheet" href="styles/bootstrap.css">
+  <script>
+    function mySearchFunction(){
+      var input, filter, table, tr, td,th, i, txtValue, j;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("tabellaPazienti");
+      tr = table.getElementsByTagName("tr");
+      th = table.getElementsByTagName("th")
+
+
+      for (i = 1; i < tr.length; i++) {
+        tr[i].style.display = "none";
+        for(var j=0; j<th.length; j++){
+          td = tr[i].getElementsByTagName("td")[j];
+          if (td) {
+            if (td.innerHTML.toUpperCase().indexOf(filter.toUpperCase()) > -1){
+              tr[i].style.display = "";
+              break;
+            }
+          }
+        }
+      }
+    } //funzione per la ricerca di pazienti all'interno dell'elenco
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      let table = document.getElementById("tabellaPazienti");
+      let rows = table.rows;
+      let pageSize = 10;
+      let pagesCount = Math.ceil(rows.length / pageSize);
+      let currentPage = 0;
+
+      function displayPage() {
+        for (let i = 0; i < rows.length; i++) {
+          rows[i].style.display = i >= pageSize * currentPage && i < pageSize * (currentPage + 1) ? "" : "none";
+        }
+      }
+
+      document.getElementById("next").addEventListener("click", function() {
+        if (currentPage < pagesCount - 1) {
+          currentPage++;
+          displayPage();
+        }
+      });
+
+      document.getElementById("prev").addEventListener("click", function() {
+        if (currentPage > 0) {
+          currentPage--;
+          displayPage();
+        }
+      });
+
+      displayPage();
+    });
+  </script> <!--dividere gli utenti in pagine di 10 elementi, bisogna fare un solo file js-->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      let table = document.getElementById("tabellaPazienti");
+      let rows = table.rows;
+      let headers = table.getElementsByTagName("th");
+
+      for (let i = 0; i < headers.length; i++) {
+        headers[i].addEventListener("click", function() {
+          sortTable(i);
+        });
+      }
+
+      function sortTable(column) {
+        let switching = true;
+        let shouldSwitch = false;
+        let i;
+        while (switching) {
+          switching = false;
+          for (i = 1; i < (rows.length - 1); i++) {
+
+            let x = rows[i].getElementsByTagName("td")[column];
+            let y = rows[i + 1].getElementsByTagName("td")[column];
+            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+              shouldSwitch = true;
+              break;
+            }
+          }
+          if (shouldSwitch) {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+          }
+        }
+      }
+    });
+  </script>
+
+
 </head>
 <body>
   <div class="p-0 m-0 h-100">
@@ -27,11 +119,20 @@
             <div class="col-md-4 p-0">
               <div class="input-group border border-1 rounded-2">
                 <span class="input-group-text border-0 rounded-1 bg-white" id="Cerca"><i class="bi bi-search color-brown"></i></span>
-                <input type="text" class="form-control border-0 rounded-1 text-end" aria-label="Cerca..." aria-describedby="Cerca" placeholder="Cerca">
+                <input type="text" class="form-control border-0 rounded-1 text-end" id="myInput" aria-label="Cerca..." aria-describedby="Cerca" placeholder="Cerca" onkeyup="mySearchFunction()">
               </div>
             </div>
           </form>
-
+         <!-- <div class="row p-4 bg-white rounded-3 shadow-sm">
+            <div class="col-md-6 form-floating">
+              <select class="form-select" id="maxRows" name="state" aria-label="Floating label select example">
+                <option value="5000" selected>MOSTRA TUTTO</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+              </select>
+              <label for="maxRows" style="left: 10px;"> Elementi da visualizzare</label>
+            </div>-->
           <!-- Tabella lista pazienti -->
 
           <%
@@ -42,7 +143,7 @@
           <div class="row">
             <div class="col-12 text-end"><p id="LblNumeroPazienti" class="color-dark-custom mb-1"><b>x</b> pazienti</p></div>
             <div class="col-12">
-              <table class="table table-sm table-striped border border-1">
+              <table id="tabellaPazienti" class="table table-sm table-striped border border-1">
                 <thead>
                 <tr>
                   <th scope="col" class="text-center">Nome</th>
@@ -74,6 +175,8 @@
               </table>
             </div>
           </div>
+            <button id="prev">Previous</button>
+            <button id="next">Next</button>
           <%
             } else {
           %>
@@ -135,7 +238,7 @@
               <div class="col-sm-8">
                 <select class="form-select" id="SlcSessoPaziente" aria-label="Sesso del paziente">
                   <option selected>Seleziona il sesso</option>
-                  <option value="M">Mascio</option>
+                  <option value="M">Maschio</option>
                   <option value="F">Femmina</option>
                   <option value="N.D.">Non specificato</option>
                 </select>
