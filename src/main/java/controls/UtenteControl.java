@@ -37,6 +37,7 @@ public class UtenteControl extends HttpServlet {
 
             //Video
             String videoResult = ServerPY.run("/api/video?user_id=" + id);
+            System.out.println(videoResult);
             obj = parser.parse(videoResult);
             JSONArray videoList = (JSONArray) obj;
             Collection<Video> videos = new LinkedList<>();

@@ -13,23 +13,40 @@ import java.util.Collections;
 
 public class ServerPY {
     static OkHttpClient client = new OkHttpClient();
-    private static String url = "https://1860302308cf6f.lhr.life";
+    private static String url = "http://127.0.0.1:5000";
     private static String token = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY3MTIwODA5NSwianRpIjoiYmE4NDVkNTAtZGE5Ni00N2Q4LWE1NmItNTY0MjkxZGYxNDVhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InRlc3QxQGdtYWlsLmNvbSIsIm5iZiI6MTY3MTIwODA5NX0.ZDfA5LfmvtmoigWz4Fqww3yKlhkJKbcHysi7intLwKo";
 
     public static String getServerURL() {
         return url;
     }
 
-    public static String run(String urlPath) {
+    public static byte[] runFile(String urlPath) {
         try {
 
             Request request = new Request.Builder()
                     .url(url + urlPath)
                     .addHeader("Authorization", token)
-                    .addHeader("Content-Type", "application/json; charset=utf-8")
+                    .addHeader("Content-Type", "application/octet-stream")
                     .build();
 
             Response response = client.newCall(request).execute();
+            return response.body().bytes();
+        } catch (Exception e) {
+            return new byte[0];
+        }
+    }
+    public static String run(String urlPath) {
+
+        try {
+
+            Request request = new Request.Builder()
+                    .url(url + urlPath)
+                    .addHeader("Authorization", token)
+                    .addHeader("Content-Type","application/json; charset=utf-8")
+                    .build();
+
+            Response response = client.newCall(request).execute();
+
             String message = response.body().string();
 
             return message;
@@ -62,9 +79,7 @@ public class ServerPY {
         Video bean = new Video();
         Long l = (long) video.get("idVideo");
         bean.setIdVideo(l.intValue());
-        String dataString = (String) video.get("data");
-        Date dataDate = new Date(Integer.parseInt(dataString.substring(0, 4)), Integer.parseInt(dataString.substring(6, 2)), Integer.parseInt(dataString.substring(8, 2)));
-        bean.setData(dataDate);
+        bean.setData((String) video.get("data"));
         l = (long) video.get("durata");
         bean.setDurata(l.intValue());
         bean.setEmozioneIa((String) video.get("emozioneIA"));
@@ -72,6 +87,7 @@ public class ServerPY {
         bean.setOra((String) video.get("ora"));
         bean.setIdUtente((String) video.get("idUtente"));
         bean.setPath((String) video.get("path"));
+        bean.setStatus((String) video.get("status"));
         return bean;
     }
 

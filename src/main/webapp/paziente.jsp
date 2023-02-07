@@ -3,6 +3,8 @@
 <%@ page import="beans.Video" %>
 <%@ page import="java.util.Iterator" %>
 <%@ page import="beans.Audio" %>
+<%@ page import="java.util.Base64" %>
+<%@ page import="java.nio.charset.StandardCharsets" %>
 <%
   Utente user = (Utente) request.getAttribute("utente");
   if(user == null) {
@@ -106,7 +108,8 @@
                 %>
                 <tr>
                   <td class="color-dark-custom align-middle text-center p-2" style="width: 200px;">
-                    <a href="<%=response.encodeURL("video.jsp?idUtente="+user.getIdUtente()+"&idVideo=" + video.getIdVideo())%>">
+                      <% String urlsafe = Base64.getUrlEncoder().encodeToString(user.getKey().getBytes(StandardCharsets.UTF_8)); %>
+                    <a href="<%=response.encodeURL("video2-control?idVideo=" + video.getIdVideo()+"&key="+urlsafe)%>">
                       <div class="ratio ratio-16x9 bg-brown">
                         <div>16x9</div>
                       </div>
@@ -160,19 +163,11 @@
                 %>
                 <tr>
                   <td class="color-dark-custom align-middle text-center p-2" style="width: 200px;">
-
-                      <audio controls>
-
-                        <source src= <%="https://172877bd31afb1.lhr.life/api/audio/play?audio_id=" + audio1.getIdAudio()%> type="audio/wav">
-                        Your browser does not support the audio element.
-                      </audio>
-
-                  </th>
                   <td class="color-dark-custom align-middle text-center"><%=audio1.getData()%></td>
                   <td class="color-dark-custom align-middle text-center"><%=audio1.getDurata()%></td>
                   <td class="color-dark-custom align-middle text-center"><%=audio1.getEmozioneUtente()%></td>
-                  <td class="text-end"><a href="<%=response.encodeURL("audio-control?idAudio=" + audio1.getIdAudio())%>" class="btn btn-primary border-0 bg-yellow-dark color-brown btn-sm">Apri<i class="bi bi-arrow-bar-right ms-2"></i></a></td>
-
+                  <% String urlsafe = Base64.getUrlEncoder().encodeToString(user.getKey().getBytes(StandardCharsets.UTF_8)); %>
+                  <td class="text-end"><a href="<%=response.encodeURL("audio-control?idAudio=" + audio1.getIdAudio()+"&key="+urlsafe)%>" class="btn btn-primary border-0 bg-yellow-dark color-brown btn-sm">Apri<i class="bi bi-arrow-bar-right ms-2"></i></a></td>
                 </tr>
                 <%
                   }

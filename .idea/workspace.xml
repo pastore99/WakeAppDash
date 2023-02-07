@@ -9,17 +9,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d79c946a-99fc-437c-957f-851669e44686" name="Changes" comment="Update UI dashboard.jsp page&#10;Insert test.jsp page to testing the new UI">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controls/SendNotifications.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/scripts/script.js" afterDir="false" />
+    <list default="true" id="d79c946a-99fc-437c-957f-851669e44686" name="Changes" comment="Provato a decryptare">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controls/Decryptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controls/Video2Control.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/beans/Video.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/beans/Video.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controls/AudioControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controls/AudioControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controls/SendNotifications.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controls/SendNotifications.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controls/ServerPY.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controls/ServerPY.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controls/UtentiControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controls/UtentiControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/audio.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/audio.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controls/UtenteControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controls/UtenteControl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/paziente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/paziente.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/test.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/provola.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/provola.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,9 +31,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Jsp File" />
         <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -85,6 +87,9 @@
       <recent name="C:\Users\nicol\IdeaProjects\WakeAppDash\src\main\webapp\illustrations" />
       <recent name="C:\Users\nicol\IdeaProjects\WakeAppDash\src\main\webapp\scripts" />
       <recent name="C:\Users\nicol\IdeaProjects\WakeAppDash\src\main\webapp\styles" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="controls" />
     </key>
   </component>
   <component name="RunManager">
@@ -196,6 +201,7 @@
       <workItem from="1674382711078" duration="7332000" />
       <workItem from="1675432703959" duration="1675000" />
       <workItem from="1675714803726" duration="2982000" />
+      <workItem from="1675778730596" duration="6950000" />
     </task>
     <task id="LOCAL-00001" summary="Inserite senzioni">
       <created>1670689257291</created>
@@ -254,6 +260,13 @@
     <MESSAGE value="Implementata connessione al WS APIRest per recupero dati dal database" />
     <MESSAGE value="Update UI dashboard.jsp page&#10;Insert test.jsp page to testing the new UI" />
     <option name="LAST_COMMIT_MESSAGE" value="Update UI dashboard.jsp page&#10;Insert test.jsp page to testing the new UI" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="org.apache.catalina.connector.Response" memberName="applicationResponse" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

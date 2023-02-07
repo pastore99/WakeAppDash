@@ -3,16 +3,17 @@ import java.util.Date;
 
 public class Video {
     private Integer idVideo;
-    private Date data;
+    private String data;
     private Integer durata;
     private  String emozioneIa; //JSON
     private String emozioneUtente; //Stringa
     private String ora;
     private String idUtente;
     private String path;
+    private String status;
 
     public Video() {}
-    public Video(Integer idVideo, Date data, Integer durata, String emozioneIa, String emozioneUtente, String ora, String idUtente) {
+    public Video(Integer idVideo, String data, Integer durata, String emozioneIa, String emozioneUtente, String ora, String idUtente, String status) {
         this.idVideo = idVideo;
         this.data = data;
         this.durata = durata;
@@ -20,6 +21,7 @@ public class Video {
         this.emozioneUtente = emozioneUtente;
         this.ora = ora;
         this.idUtente = idUtente;
+        this.status = status;
     }
 
     public Integer getIdVideo() {
@@ -29,10 +31,10 @@ public class Video {
         this.idVideo = idVideo;
     }
 
-    public Date getData() {
+    public String getData() {
         return data;
     }
-    public void setData(Date data) {
+    public void setData(String data) {
         this.data = data;
     }
 
@@ -78,6 +80,14 @@ public class Video {
         this.path = path;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "Video{" +
@@ -88,6 +98,7 @@ public class Video {
                 ", emozioneUtente='" + emozioneUtente + '\'' +
                 ", ora='" + ora + '\'' +
                 ", idUtente='" + idUtente + '\'' +
+                ", status='" + status + '\'' +
                 '}';
     }
 }

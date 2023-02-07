@@ -255,15 +255,6 @@
       </div>
     </div>
   </div>
-
-  <%
-    Boolean send = (boolean) request.getAttribute("send");
-    if(send) {
-  
-    } else {
-
-    }
-  %>
   <div class="toast align-items-center bg-success text-white border-0" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="d-flex">
       <div class="toast-body">

@@ -20,7 +20,7 @@
 </head>
 <body>
 <audio controls>
-    <source src=<%="data:audio/wav;base64," + Base64.getEncoder().encodeToString(file)%> type="audio/wav">
+    <source src=<%=file%> type="audio/wav">
     Your browser does not support the audio element.
 </audio>
 
