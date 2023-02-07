@@ -1,5 +1,6 @@
 package controls;
 
+import beans.Emozioni;
 import beans.Utente;
 import beans.Video;
 import org.json.simple.JSONObject;
@@ -9,6 +10,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.io.OutputStream;
 
 @WebServlet(name = "VideoControl", value = "/video-control")
 public class VideoControl extends HttpServlet {
@@ -16,6 +18,7 @@ public class VideoControl extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.removeAttribute("utente");
         request.removeAttribute("video");
+        String keyFake = request.getParameter("key");
         try {
             JSONParser parser = new JSONParser();
             Object obj;
@@ -32,9 +35,25 @@ public class VideoControl extends HttpServlet {
             Video video = ServerPY.parseVideoObject((JSONObject) obj);
             request.setAttribute("video", video);
 
-            /* Intelligenza artificiale - prob. emozioni
-            * come recuperare le percentuali relative alla emozioni (tristezza-incazzatura-allegeria-felicita)
-            * */
+            String jsonEmozioniIA = video.getEmozioneIa();
+            obj = parser.parse(jsonEmozioniIA);
+            Emozioni emozioneIA = ServerPY.parseEmozioniObject((JSONObject) obj);
+            request.setAttribute("emozioniIA", emozioneIA);
+
+            String jsonEmozioniUtente = video.getEmozioneUtente();
+            obj = parser.parse(jsonEmozioniUtente);
+            Emozioni emozioneUtente = ServerPY.parseEmozioniObject((JSONObject) obj);
+            request.setAttribute("emozioniUtente", emozioneUtente);
+
+            byte[] bytes = ServerPY.runFile("/api/video/play?video_id="+ idVideo);
+            byte[] decrypted = Decryptor.decrypt(keyFake, bytes);
+            response.setContentType("video/mp4");
+            response.setContentLength(decrypted.length);
+            OutputStream out = response.getOutputStream();
+            out.write(decrypted);
+            out.flush();
+            out.close();
+
         } catch (Exception e) {
             e.printStackTrace();
         }

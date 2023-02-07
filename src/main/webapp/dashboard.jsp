@@ -203,8 +203,8 @@
   <div class="modal fade" id="MdlInserisciPaziente" tabindex="-1" aria-labelledby="MdlInserisciPaziente" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header bg-yellow-light">
-          <h1 class="modal-title fs-5 color-brown" id="exampleModalLabel">Inserisci nuovo paziente</h1>
+        <div class="modal-header bg-violette">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Inserisci nuovo paziente</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -246,8 +246,8 @@
             </div>
             <div class="row">
               <div class="col-12 text-end">
-                <button type="button" class="btn btn-primary border-0 bg-brown color-yellow-light me-4" data-bs-dismiss="modal"><i class="bi bi-x-lg me-2"></i>Annulla</button>
-                <button type="submit" class="btn btn-primary border-0 bg-yellow-light color-brown">Inserisci<i class="bi bi-person-plus ms-2"></i></button>
+                <button type="button" class="btn-menu border-0 me-4" data-bs-dismiss="modal"><i class="bi bi-x-lg me-2"></i>Annulla</button>
+                <button type="submit" class="btn-menu border-0">Inserisci<i class="bi bi-person-plus ms-2"></i></button>
               </div>
             </div>
           </form>
@@ -255,24 +255,36 @@
       </div>
     </div>
   </div>
-  <div class="toast align-items-center bg-success text-white border-0" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="d-flex">
-      <div class="toast-body">
-        Ben fatto, le notifiche sono state inviate ai tuoi pazienti!
+  <%
+    Boolean send = (Boolean) request.getAttribute("send");
+    if(send) {
+  %>
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div class="toast align-items-center bg-success text-white border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body">
+          Ben fatto, le notifiche sono state inviate ai tuoi pazienti!
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
-      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
   </div>
-
-  <div class="toast align-items-center bg-danger text-white border-0" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="d-flex">
-      <div class="toast-body">
-        Oh no, qualcosa è andato storto... Le notifiche non sono state inviate!
+  <%
+    } else {
+  %>
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div class="toast align-items-center bg-danger text-white border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body">
+          Oh no, qualcosa è andato storto... Le notifiche non sono state inviate!
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
-      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
   </div>
-
+  <%
+    }
+  %>
   <script src="scripts/bootstrap.js" rel="script"></script>
 </body>
 </html>

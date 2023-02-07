@@ -27,27 +27,21 @@ public class AudioControl extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.removeAttribute("audio");
         try {
-
             String idAudio = request.getParameter("idAudio");
             String keyFake = request.getParameter("key");
             byte[] obj = ServerPY.runFile("/api/audio/play?audio_id="+ idAudio);
-
             byte[] decrypted = Decryptor.decrypt(keyFake, obj);
-
             response.setContentType("audio/wav");
             response.setContentLength(decrypted.length);
             OutputStream out = response.getOutputStream();
             out.write(decrypted);
             out.flush();
             out.close();
-
         }catch (Exception e){
             e.printStackTrace();
         }
-
-        RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/provola.jsp");
+        RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/audio.jsp");
         dispatcher.forward(request, response);
-
     }
 
     @Override

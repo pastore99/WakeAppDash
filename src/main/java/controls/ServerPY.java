@@ -1,6 +1,7 @@
 package controls;
 
 import beans.Audio;
+import beans.Emozioni;
 import beans.Utente;
 import beans.Video;
 import okhttp3.*;
@@ -88,6 +89,17 @@ public class ServerPY {
         bean.setIdUtente((String) video.get("idUtente"));
         bean.setPath((String) video.get("path"));
         bean.setStatus((String) video.get("status"));
+        return bean;
+    }
+
+    public static Emozioni parseEmozioniObject(JSONObject emozioni) {
+        Emozioni bean = new Emozioni();
+        bean.setArrabbiato((Double) emozioni.get("arrabbiato"));
+        bean.setFelice((Double) emozioni.get("felice"));
+        bean.setNeutrale((Double) emozioni.get("neutrale"));
+        bean.setDisgustato((Double) emozioni.get("disgustato"));
+        bean.setImpaurito((Double) emozioni.get("impaurito"));
+        bean.setTriste((Double) emozioni.get("triste"));
         return bean;
     }
 

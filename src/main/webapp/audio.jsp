@@ -7,7 +7,8 @@
   String idAudio = request.getParameter("idAudio");
   Audio audio = (Audio) request.getAttribute("audio");
   Utente user = (Utente) request.getAttribute("utente");
-  if(audio == null || user == null) response.sendRedirect(response.encodeRedirectURL("./audio-control?idAudio="+idAudio));
+  byte[] file = (byte[]) request.getAttribute("audio");
+  if(audio == null || user == null || file == null) response.sendRedirect(response.encodeRedirectURL("./audio-control?idAudio="+idAudio));
 %>
 <html>
 <head>
@@ -38,11 +39,11 @@
             </div>
           </div>
 
-          <!-- Video -->
+          <!-- Audio -->
           <div class="row bg-violette p-2">
             <div class="col-12 d-flex justify-content-center">
               <audio controls>
-                <source src="" type="audio/mpeg">
+                <source src="<%=file%>" type="audio/wav">
                 Oh no, questo browser non supporta il formato audio... Per favore, riprova con un altro browser!
               </audio>
             </div>

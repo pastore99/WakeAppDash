@@ -1,12 +1,15 @@
 <%@ page import="beans.Video" %>
 <%@ page import="beans.Utente" %>
+<%@ page import="beans.Emozioni" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
   String idUtente = request.getParameter("idUtente");
   String idVideo = request.getParameter("idVideo");
   Video video = (Video) request.getAttribute("video");
   Utente user = (Utente) request.getAttribute("utente");
-  if(video == null || user == null) response.sendRedirect(response.encodeRedirectURL("./video-control?idUtente="+idUtente+"&idVideo="+idVideo));
+  Emozioni emozioniIA = (Emozioni) request.getAttribute("emozioniIA");
+  Emozioni emozioniUtente = (Emozioni) request.getAttribute("emozioniUtente");
+  if(video == null || user == null || emozioniIA == null || emozioniUtente == null) response.sendRedirect(response.encodeRedirectURL("./video-control?idUtente="+idUtente+"&idVideo="+idVideo));
 %>
 <html>
 <head>
