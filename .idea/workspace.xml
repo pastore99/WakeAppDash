@@ -9,14 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d79c946a-99fc-437c-957f-851669e44686" name="Changes" comment="Update UI dashboard.jsp page&#10;Insert test.jsp page to testing the new UI">
-      <change afterPath="$PROJECT_DIR$/src/main/java/beans/Emozioni.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controls/AudioControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controls/AudioControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controls/VideoControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controls/VideoControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/audio.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/audio.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="d79c946a-99fc-437c-957f-851669e44686" name="Changes" comment="Update UI dashboard.jsp page&#10;Insert test.jsp page to testing the new UI" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -250,6 +243,13 @@
     <MESSAGE value="Implementata connessione al WS APIRest per recupero dati dal database" />
     <MESSAGE value="Update UI dashboard.jsp page&#10;Insert test.jsp page to testing the new UI" />
     <option name="LAST_COMMIT_MESSAGE" value="Update UI dashboard.jsp page&#10;Insert test.jsp page to testing the new UI" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="org.apache.catalina.connector.Response" memberName="applicationResponse" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

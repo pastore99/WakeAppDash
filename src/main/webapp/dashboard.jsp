@@ -257,7 +257,7 @@
   </div>
   <%
     Boolean send = (Boolean) request.getAttribute("send");
-    if(send) {
+    if(send != null && send) {
   %>
   <div class="toast-container position-fixed bottom-0 end-0 p-3">
     <div class="toast align-items-center bg-success text-white border-0" role="alert" aria-live="assertive" aria-atomic="true">
