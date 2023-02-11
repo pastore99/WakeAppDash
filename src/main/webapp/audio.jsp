@@ -3,8 +3,6 @@
 <%@ page import="java.util.Comparator" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-  String idUtente = request.getParameter("idUtente");
-  String idAudio = request.getParameter("idAudio");
   Audio audio = (Audio) request.getAttribute("audio");
   Utente user = (Utente) request.getAttribute("utente");
   Emozioni emozioni = (Emozioni) request.getAttribute("emozioneIA");
@@ -23,7 +21,7 @@
     }
   });
   String file = (String) request.getAttribute("file");
-  if(audio == null || user == null || file == null) response.sendRedirect(response.encodeRedirectURL("./audio-control?idAudio="+idAudio));
+  if(audio == null || user == null || file == null) response.sendRedirect(response.encodeRedirectURL("./audio-control?idAudio="+audio.getIdAudio()));
 %>
 <html>
 <head>
@@ -68,59 +66,69 @@
           <!-- Emozioni -->
           <div class="row my-4">
             <div class="col-md-6 text-center">
+              <%
+                switch (audio.getEmozioneUtente()) {
+                  case "felice":
+              %>
               <img src="img/Happy.svg" alt="Happy" height="120px">
+              <%
+                  break;
+                case "triste":
+              %>
+              <img src="img/Happy.svg" alt="Happy" height="120px">
+              <%
+                  break;
+                case "arrabbiato":
+              %>
+              <img src="img/Happy.svg" alt="Happy" height="120px">
+              <%
+                  break;
+                case "sorpreso":
+              %>
+              <img src="img/Happy.svg" alt="Happy" height="120px">
+              <%
+                  break;
+                case "disgustato":
+              %>
+              <img src="img/Happy.svg" alt="Happy" height="120px">
+              <%
+                  break;
+                case "neutrale":
+              %>
+              <img src="img/Happy.svg" alt="Happy" height="120px">
+              <%
+                  break;
+                case "impaurito":
+              %>
+              <img src="img/Happy.svg" alt="Happy" height="120px">
+              <%
+                    break;
+                }
+              %>
               <p class="color-dark-custom fs-4">Utente</p>
             </div>
             <div class="col-md-6 text-center">
-              <img src="img/Sad.svg" alt="Sad" height="120px">
-              <span class="badge rounded-pill bg-yellow-light color-dark-custom">100%</span>
+              <img src="img/<%=lista.get(0).getNome()%>>.svg" alt="Sad" height="120px">
+              <span class="badge rounded-pill bg-yellow-light color-dark-custom"><%=lista.get(0).getValore()%>%</span>
               <p class="color-dark-custom fs-4">Intelligenza artificiale</p>
             </div>
             <div class="col-12"><h4 class="color-dark-custom">Intelligenza artificiale - probabilità emozioni</h4></div>
+            <%
+              for (Emozione e:lista) {
+            %>
             <div class="col-12 my-2">
               <div class="progress" style="height: 68px;">
-                <div class="progress-bar bg-violette" role="progressbar" aria-label="Triste" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar bg-violette" role="progressbar" aria-label="Triste" style="width: <%=e.getValore()%>%;" aria-valuenow="<%=e.getValore()%>" aria-valuemin="0" aria-valuemax="100">
                   <div class="d-flex justify-content-start align-items-center">
-                    <img src="img/Sad.svg" alt="Sad" height="60px" class="px-2">
-                    <p class="color-dark-custom w-100 text-center fs-4 m-0" id="LblProgessTriste">100%</p>
+                    <img src="img/<%=e.getNome()%>.svg" alt="<%=e.getNome()%>" height="60px" class="px-2">
+                    <p class="color-dark-custom w-100 text-center fs-4 m-0"><%=e.getValore()%>%</p>
                   </div>
                 </div>
               </div>
             </div>
-
-            <div class="col-12 my-2">
-              <div class="progress" style="height: 68px;">
-                <div class="progress-bar bg-violette" role="progressbar" aria-label="Arrabbiato" style="width: 68%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
-                  <div class="d-flex justify-content-start align-items-center">
-                    <img src="img/Angry.svg" alt="Sad" height="60px" class="px-2">
-                    <p class="color-dark-custom w-100 text-center fs-4 m-0" id="LblProgessArrabbiato">68%</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 my-2">
-              <div class="progress" style="height: 68px;">
-                <div class="progress-bar bg-violette" role="progressbar" aria-label="Felice" style="width: 22%;" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100">
-                  <div class="d-flex justify-content-start align-items-center">
-                    <img src="img/Happy.svg" alt="Sad" height="60px" class="px-2">
-                    <p class="color-dark-custom w-100 text-center fs-4 m-0" id="LblProgessFelice">22%</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 my-2">
-              <div class="progress" style="height: 68px;">
-                <div class="progress-bar bg-violette" role="progressbar" aria-label="Felice" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-                  <div class="d-flex justify-content-start align-items-center">
-                    <img src="img/Smile.svg" alt="Sad" height="60px" class="px-2">
-                    <p class="color-dark-custom w-100 text-center fs-4 m-0" id="LblProgessSorriso">0%</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+            <%
+              }
+            %>
           </div>
         </div>
       </div>

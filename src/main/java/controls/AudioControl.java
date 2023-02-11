@@ -1,8 +1,10 @@
 package controls;
 
 import beans.Audio;
+import beans.Emozioni;
 import beans.Utente;
 import beans.Video;
+import com.google.gson.Gson;
 import com.macasaet.fernet.Key;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.json.simple.JSONArray;
@@ -28,34 +30,24 @@ import java.util.*;
 public class AudioControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.removeAttribute("audio");
         try {
+            String u = new String(Base64.getUrlDecoder().decode(request.getParameter("InputUser")), StandardCharsets.UTF_8);
+            Utente utente = new Gson().fromJson(u, Utente.class);
+            String a = new String(Base64.getUrlDecoder().decode(request.getParameter("InputAudio")), StandardCharsets.UTF_8);
+            Audio audio = new Gson().fromJson(a, Audio.class);
+
             JSONParser parser = new JSONParser();
-            Object obj;
+            String app = audio.getEmozioneIa().replace("\'", "\"");
+            Object obj2 = parser.parse(app);
+            Emozioni emozioneIA = ServerPY.parseEmozioniObject((JSONObject) obj2);
 
-            String idUtente = request.getParameter("idUtente");
-            String utenteResult = ServerPY.run("/api/user?id=" + idUtente);
-            obj = parser.parse(utenteResult);
-            Utente utente = ServerPY.parseUtenteObject((JSONObject) obj);
-            request.setAttribute("utente", utente);
-
-            String idAudio = request.getParameter("idAudio");
-            String audioResult = ServerPY.run("/api/audio?user_id=" + idUtente);
-            obj = parser.parse(audioResult);
-            JSONArray audioList = (JSONArray) obj;
-            Collection<Audio> audio = new LinkedList<>();
-            audioList.forEach(emp -> audio.add(ServerPY.parseAudioObject((JSONObject) emp)));
-            for (Audio a:audio) {
-                if (a.getIdAudio() == Integer.parseInt(idAudio)) {
-                    request.setAttribute("audio", a);
-                    break;
-                }
-            }
-
-            String keyFake = request.getParameter("key");
-            byte[] obj2 = ServerPY.runFile("/api/audio/play?audio_id="+ idAudio);
-            byte[] decrypted = Decryptor.decrypt(keyFake, obj2);
+            String keyFake = Base64.getUrlEncoder().encodeToString(utente.getKey().getBytes(StandardCharsets.UTF_8));
+            byte[] obj = ServerPY.runFile("/api/audio/play?audio_id="+ audio.getIdAudio());
+            byte[] decrypted = Decryptor.decrypt(keyFake, obj);
             String b64 = Base64.getEncoder().encodeToString(decrypted);
+            request.setAttribute("emozioneIA", emozioneIA);
+            request.setAttribute("utente", utente);
+            request.setAttribute("audio", audio);
             request.setAttribute("file", b64);
         }catch (Exception e){
             e.printStackTrace();

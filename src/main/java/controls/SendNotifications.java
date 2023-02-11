@@ -9,7 +9,7 @@ import java.io.IOException;
 public class SendNotifications extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String type = (String) request.getAttribute("type");
+        String type = (String) request.getParameter("type");
         try {
             Boolean result = ServerPY.sendNotifications("/api/notification", type);
             if(result) {

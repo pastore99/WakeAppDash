@@ -160,17 +160,22 @@
                 <%
                   Iterator<?> iterator = audio.iterator();
                   while (iterator.hasNext()) {
-
                     Audio audio1 = (Audio) iterator.next();
-
                 %>
                 <tr>
-                  <td class="color-dark-custom align-middle text-center p-2" style="width: 200px;">
+                  <% String urlsafe = Base64.getUrlEncoder().encodeToString(user.getKey().getBytes(StandardCharsets.UTF_8)); %>
+                  <td class="text-center">
+                    <form action="<%=response.encodeURL("audio-control")%>" method="post">
+                      <button class="ratio ratio-16x9 bg-dark-custom" type="submit">
+                        <div class="d-flex align-items-center justify-content-center"><i class="bi bi-cassette text-white fs-2"></i></div>
+                      </button>
+                      <input type="text" name="InputUser" value="<%=Base64.getUrlEncoder().encodeToString((new Gson().toJson(user)).getBytes())%>" hidden="hidden">
+                      <input type="text" name="InputAudio" value="<%=Base64.getUrlEncoder().encodeToString((new Gson().toJson(audio1)).getBytes())%>" hidden="hidden">
+                    </form>
+                  </td>
                   <td class="color-dark-custom align-middle text-center"><%=audio1.getData()%></td>
                   <td class="color-dark-custom align-middle text-center"><%=audio1.getDurata()%></td>
                   <td class="color-dark-custom align-middle text-center"><%=audio1.getEmozioneUtente()%></td>
-                  <% String urlsafe = Base64.getUrlEncoder().encodeToString(user.getKey().getBytes(StandardCharsets.UTF_8)); %>
-                  <td class="text-end"><a href="<%=response.encodeURL("audio-control?idAudio=" + audio1.getIdAudio()+"&key="+urlsafe+"&idUtente="+user.getIdUtente())%>" class="btn-menu btn-sm">Apri<i class="bi bi-arrow-bar-right ms-2"></i></a></td>
                 </tr>
                 <%
                   }

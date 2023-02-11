@@ -131,7 +131,7 @@
             if (utenti != null && utenti.size() > 0) {
           %>
           <div class="row">
-            <div class="col-12 text-end"><p id="LblNumeroPazienti" class="color-dark-custom mb-1"><b>x</b> pazienti</p></div>
+            <div class="col-12 text-end"><p id="LblNumeroPazienti" class="color-dark-custom mb-1"><b><%=utenti.size()%></b> pazienti</p></div>
             <div class="col-12">
               <table id="tabellaPazienti" class="table table-sm table-striped border border-1">
                 <thead>

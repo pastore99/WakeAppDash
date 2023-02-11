@@ -9,26 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d79c946a-99fc-437c-957f-851669e44686" name="Changes" comment="Update project. Manage emotions.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/beans/Emozione.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_02_2023_16_39_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_02_2023_16_39__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_02_2023_15_17__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_02_2023_15_17__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_02_2023_16_46__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_02_2023_16_46__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_02_2023_09_40__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_02_2023_09_40__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_02_2023_11_01__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_02_2023_11_01__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+    <list default="true" id="d79c946a-99fc-437c-957f-851669e44686" name="Changes" comment="Update project. Update video.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/beans/Emozioni.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/beans/Emozioni.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/beans/Video.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/beans/Video.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controls/AudioControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controls/AudioControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controls/ServerPY.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controls/ServerPY.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controls/Video2Control.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controls/Video2Control.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controls/VideoControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controls/VideoControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controls/SendNotifications.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controls/SendNotifications.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/audio.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/audio.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/paziente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/paziente.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/video.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/video.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +192,7 @@
       <workItem from="1674382711078" duration="7332000" />
       <workItem from="1675432703959" duration="1675000" />
       <workItem from="1675714803726" duration="2982000" />
-      <workItem from="1676126062125" duration="10335000" />
+      <workItem from="1676126062125" duration="12636000" />
     </task>
     <task id="LOCAL-00001" summary="Inserite senzioni">
       <created>1670689257291</created>
@@ -242,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674919579735</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Update project. Update video.">
+      <created>1676136810994</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1676136810994</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +257,8 @@
     <MESSAGE value="Inserite senzioni" />
     <MESSAGE value="Implementata connessione al WS APIRest per recupero dati dal database" />
     <MESSAGE value="Update UI dashboard.jsp page&#10;Insert test.jsp page to testing the new UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update UI dashboard.jsp page&#10;Insert test.jsp page to testing the new UI" />
+    <MESSAGE value="Update project. Update video." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update project. Update video." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -312,6 +307,46 @@
           <url>file://$PROJECT_DIR$/src/main/java/controls/Video2Control.java</url>
           <line>53</line>
           <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controls/AudioControl.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controls/AudioControl.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controls/AudioControl.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controls/AudioControl.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controls/SendNotifications.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controls/SendNotifications.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controls/SendNotifications.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controls/SendNotifications.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="66" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
