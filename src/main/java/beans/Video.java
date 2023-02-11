@@ -1,11 +1,12 @@
 package beans;
-import java.util.Date;
+import java.io.Serializable;
 
-public class Video {
+
+public class Video implements Serializable {
     private Integer idVideo;
     private String data;
     private Integer durata;
-    private  String emozioneIa; //JSON
+    private String emozioneIa; //JSON
     private String emozioneUtente; //Stringa
     private String ora;
     private String idUtente;

@@ -7,14 +7,9 @@ import beans.Video;
 import okhttp3.*;
 import org.json.simple.JSONObject;
 
-import java.io.IOException;
-import java.sql.Date;
-import java.util.Collection;
-import java.util.Collections;
-
 public class ServerPY {
     static OkHttpClient client = new OkHttpClient();
-    private static String url = "http://127.0.0.1:5000";
+    private static String url = "https://0327c7abc2f022.lhr.life";
     private static String token = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY3MTIwODA5NSwianRpIjoiYmE4NDVkNTAtZGE5Ni00N2Q4LWE1NmItNTY0MjkxZGYxNDVhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InRlc3QxQGdtYWlsLmNvbSIsIm5iZiI6MTY3MTIwODA5NX0.ZDfA5LfmvtmoigWz4Fqww3yKlhkJKbcHysi7intLwKo";
 
     public static String getServerURL() {
@@ -94,12 +89,13 @@ public class ServerPY {
 
     public static Emozioni parseEmozioniObject(JSONObject emozioni) {
         Emozioni bean = new Emozioni();
-        bean.setArrabbiato((Double) emozioni.get("arrabbiato"));
-        bean.setFelice((Double) emozioni.get("felice"));
-        bean.setNeutrale((Double) emozioni.get("neutrale"));
-        bean.setDisgustato((Double) emozioni.get("disgustato"));
-        bean.setImpaurito((Double) emozioni.get("impaurito"));
-        bean.setTriste((Double) emozioni.get("triste"));
+        bean.setArrabbiato(fromExpToInteger((Double) emozioni.get("angry")));
+        bean.setFelice(fromExpToInteger((Double) emozioni.get("happy")));
+        bean.setNeutrale(fromExpToInteger((Double) emozioni.get("neutral")));
+        bean.setDisgustato(fromExpToInteger((Double) emozioni.get("disgust")));
+        bean.setImpaurito(fromExpToInteger((Double) emozioni.get("fear")));
+        bean.setTriste(fromExpToInteger((Double) emozioni.get("sad")));
+        bean.setSorpreso(fromExpToInteger((Double) emozioni.get("surprise")));
         return bean;
     }
 
@@ -140,5 +136,12 @@ public class ServerPY {
             e.printStackTrace();
             return false;
         }
+    }
+
+    static int fromExpToInteger(Double num) {
+        String s = String.format("%.2f", num);
+        s = s.replace(",", ".");
+        num = Double.parseDouble(s);
+        return (int) (num*100);
     }
 }

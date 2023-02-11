@@ -3,6 +3,7 @@ package controls;
 import beans.Emozioni;
 import beans.Utente;
 import beans.Video;
+import com.google.gson.Gson;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
@@ -18,7 +19,6 @@ public class VideoControl extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.removeAttribute("utente");
         request.removeAttribute("video");
-        String keyFake = request.getParameter("key");
         try {
             JSONParser parser = new JSONParser();
             Object obj;
@@ -44,16 +44,6 @@ public class VideoControl extends HttpServlet {
             obj = parser.parse(jsonEmozioniUtente);
             Emozioni emozioneUtente = ServerPY.parseEmozioniObject((JSONObject) obj);
             request.setAttribute("emozioniUtente", emozioneUtente);
-
-            byte[] bytes = ServerPY.runFile("/api/video/play?video_id="+ idVideo);
-            byte[] decrypted = Decryptor.decrypt(keyFake, bytes);
-            response.setContentType("video/mp4");
-            response.setContentLength(decrypted.length);
-            OutputStream out = response.getOutputStream();
-            out.write(decrypted);
-            out.flush();
-            out.close();
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -63,6 +53,6 @@ public class VideoControl extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        super.doGet(request, response);
+        super.doPost(request, response);
     }
 }

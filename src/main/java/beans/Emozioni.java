@@ -1,13 +1,15 @@
 package beans;
 
-public class Emozioni {
-    private double neutrale;
-    private double disgustato;
-    private double felice;
-    private double impaurito;
-    private double arrabbiato;
-    private double sorpreso;
-    private double triste;
+import java.io.Serializable;
+
+public class Emozioni implements Serializable {
+    private int neutrale;
+    private int disgustato;
+    private int felice;
+    private int impaurito;
+    private int arrabbiato;
+    private int sorpreso;
+    private int triste;
 
     public Emozioni() {
         this.neutrale = 0;
@@ -18,7 +20,7 @@ public class Emozioni {
         this.sorpreso = 0;
         this.triste = 0;
     }
-    public Emozioni(double neutrale, double disgustato, double felice, double impaurito, double arrabbiato, double sorpreso, double triste) {
+    public Emozioni(int neutrale, int disgustato, int felice, int impaurito, int arrabbiato, int sorpreso, int triste) {
         this.neutrale = neutrale;
         this.disgustato = disgustato;
         this.felice = felice;
@@ -28,59 +30,59 @@ public class Emozioni {
         this.triste = triste;
     }
 
-    public double getNeutrale() {
+    public int getNeutrale() {
         return neutrale;
     }
 
-    public double getDisgustato() {
+    public int getDisgustato() {
         return disgustato;
     }
 
-    public double getFelice() {
+    public int getFelice() {
         return felice;
     }
 
-    public double getImpaurito() {
+    public int getImpaurito() {
         return impaurito;
     }
 
-    public double getArrabbiato() {
+    public int getArrabbiato() {
         return arrabbiato;
     }
 
-    public double getSorpreso() {
+    public int getSorpreso() {
         return sorpreso;
     }
 
-    public double getTriste() {
+    public int getTriste() {
         return triste;
     }
 
-    public void setNeutrale(double neutrale) {
+    public void setNeutrale(int neutrale) {
         this.neutrale = neutrale;
     }
 
-    public void setDisgustato(double disgustato) {
+    public void setDisgustato(int disgustato) {
         this.disgustato = disgustato;
     }
 
-    public void setFelice(double felice) {
+    public void setFelice(int felice) {
         this.felice = felice;
     }
 
-    public void setImpaurito(double impaurito) {
+    public void setImpaurito(int impaurito) {
         this.impaurito = impaurito;
     }
 
-    public void setArrabbiato(double arrabbiato) {
+    public void setArrabbiato(int arrabbiato) {
         this.arrabbiato = arrabbiato;
     }
 
-    public void setSorpreso(double sorpreso) {
+    public void setSorpreso(int sorpreso) {
         this.sorpreso = sorpreso;
     }
 
-    public void setTriste(double triste) {
+    public void setTriste(int triste) {
         this.triste = triste;
     }
 }

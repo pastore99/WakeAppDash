@@ -5,6 +5,7 @@
 <%@ page import="beans.Audio" %>
 <%@ page import="java.util.Base64" %>
 <%@ page import="java.nio.charset.StandardCharsets" %>
+<%@ page import="com.google.gson.Gson" %>
 <%
   Utente user = (Utente) request.getAttribute("utente");
   if(user == null) {
@@ -16,6 +17,7 @@
   <title>Paziente</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
   <link rel="stylesheet" href="styles/bootstrap.css">
+  <script src="https://code.jquery.com/jquery-3.6.3.slim.js" integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="p-0 m-0 h-100">
@@ -81,9 +83,9 @@
           <!-- Tabella report -->
           <div class="row">
             <div class="col-12 mb-4">
-              <button type="button" class="btn-menu btn-menu-active" id="BtnReportVideo" onclick="showVideo()">Report video</button>
-              <button type="button" class="btn-menu" id="BtnReportAudio" onclick="showAudio()">Report audio</button>
-              <button type="button" class="btn-menu" id="BtnDaschboard" onclick="showParametri()">Dashboard</button>
+              <button type="button" class="btn-menu btn-menu-active" id="BtnReportVideo" onclick="showVideo();">Report video</button>
+              <button type="button" class="btn-menu" id="BtnReportAudio" onclick="showAudio();">Report audio</button>
+              <button type="button" class="btn-menu" id="BtnDaschboard" onclick="showParametri();">Dashboard</button>
             </div>
             <%
               Collection<?> videos = (Collection<?>) request.getAttribute("video");
@@ -108,12 +110,13 @@
                 %>
                 <tr>
                   <td class="color-dark-custom align-middle text-center p-2" style="width: 200px;">
-                      <% String urlsafe = Base64.getUrlEncoder().encodeToString(user.getKey().getBytes(StandardCharsets.UTF_8)); %>
-                    <a href="<%=response.encodeURL("video2-control?idVideo=" + video.getIdVideo()+"&key="+urlsafe)%>">
-                      <div class="ratio ratio-16x9 bg-brown">
-                        <div>16x9</div>
-                      </div>
-                    </a>
+                    <form action="<%=response.encodeURL("video2-control")%>" method="post">
+                      <button class="ratio ratio-16x9 bg-dark-custom" type="submit">
+                        <div class="d-flex align-items-center justify-content-center"><i class="bi bi-play-circle text-white fs-2"></i></div>
+                      </button>
+                      <input type="text" name="InputUser" value="<%=Base64.getUrlEncoder().encodeToString((new Gson().toJson(user)).getBytes())%>" hidden="hidden">
+                      <input type="text" name="InputVideo" value="<%=Base64.getUrlEncoder().encodeToString((new Gson().toJson(video)).getBytes())%>" hidden="hidden">
+                    </form>
                   </th>
                   <td class="color-dark-custom align-middle text-center"><%=video.getData()%></td>
                   <td class="color-dark-custom align-middle text-center"><%=video.getDurata()%></td>
@@ -143,7 +146,7 @@
               if(audio == null) response.sendRedirect("utente-control");
               if(audio != null && audio.size() > 0) {
             %>
-            <div class="col-12" id="PnlTabellaAudio">
+            <div class="col-12 d-none" id="PnlTabellaAudio">
               <table class="table table-sm table-striped border border-1" id="TblAudio">
                 <thead>
                 <tr>
@@ -167,7 +170,7 @@
                   <td class="color-dark-custom align-middle text-center"><%=audio1.getDurata()%></td>
                   <td class="color-dark-custom align-middle text-center"><%=audio1.getEmozioneUtente()%></td>
                   <% String urlsafe = Base64.getUrlEncoder().encodeToString(user.getKey().getBytes(StandardCharsets.UTF_8)); %>
-                  <td class="text-end"><a href="<%=response.encodeURL("audio-control?idAudio=" + audio1.getIdAudio()+"&key="+urlsafe)%>" class="btn btn-primary border-0 bg-yellow-dark color-brown btn-sm">Apri<i class="bi bi-arrow-bar-right ms-2"></i></a></td>
+                  <td class="text-end"><a href="<%=response.encodeURL("audio-control?idAudio=" + audio1.getIdAudio()+"&key="+urlsafe+"&idUtente="+user.getIdUtente())%>" class="btn-menu btn-sm">Apri<i class="bi bi-arrow-bar-right ms-2"></i></a></td>
                 </tr>
                 <%
                   }
@@ -178,7 +181,7 @@
             <%
               } else {
             %>
-            <div class="col-md-12" id="PnlNoAudio">
+            <div class="col-md-12 d-none" id="PnlNoAudio">
               <div class="row h-75 d-flex align-content-center">
                 <div class="col-md-12 text-center">
                   <img src="illustrations/empty.svg" class="img-fluid my-5" alt="Nessun audio presente." style="height: 240px">
@@ -190,7 +193,7 @@
             <%
               }
             %>
-            <div class="col-12" id="PnlDaschboard">
+            <div class="col-12 d-none" id="PnlDaschboard">
               <div class="row">
                 <div class="col-md-6"><h4 class="color-dark-custom">Parametri fisici</h4></div>
                 <div class="col-md-6 text-end fs-4"><p class="color-dark-custom" id="LblDataRilevamentoPF">7-12 nov 2022<i class="bi bi-calendar-week ms-2"></i></p></div>

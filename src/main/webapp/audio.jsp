@@ -1,13 +1,28 @@
-<%@ page import="beans.Video" %>
-<%@ page import="beans.Utente" %>
-<%@ page import="beans.Audio" %>
+<%@ page import="beans.*" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.Comparator" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
   String idUtente = request.getParameter("idUtente");
   String idAudio = request.getParameter("idAudio");
   Audio audio = (Audio) request.getAttribute("audio");
   Utente user = (Utente) request.getAttribute("utente");
-  byte[] file = (byte[]) request.getAttribute("audio");
+  Emozioni emozioni = (Emozioni) request.getAttribute("emozioneIA");
+  ArrayList<Emozione> lista = new ArrayList<>();
+  lista.add(new Emozione("arrabbiato", emozioni.getArrabbiato()));
+  lista.add(new Emozione("triste", emozioni.getTriste()));
+  lista.add(new Emozione("felice", emozioni.getFelice()));
+  lista.add(new Emozione("disgustato", emozioni.getDisgustato()));
+  lista.add(new Emozione("sorpreso", emozioni.getSorpreso()));
+  lista.add(new Emozione("neutrale", emozioni.getNeutrale()));
+  lista.add(new Emozione("impaurito", emozioni.getImpaurito()));
+  lista.sort(new Comparator<Emozione>() {
+    @Override
+    public int compare(Emozione o1, Emozione o2) {
+      return o1.getValore() < o2.getValore() ? 1 : -1;
+    }
+  });
+  String file = (String) request.getAttribute("file");
   if(audio == null || user == null || file == null) response.sendRedirect(response.encodeRedirectURL("./audio-control?idAudio="+idAudio));
 %>
 <html>
@@ -43,7 +58,7 @@
           <div class="row bg-violette p-2">
             <div class="col-12 d-flex justify-content-center">
               <audio controls>
-                <source src="<%=file%>" type="audio/wav">
+                <source src="data:audio/wav;base64,<%=file%>" type="audio/wav">
                 Oh no, questo browser non supporta il formato audio... Per favore, riprova con un altro browser!
               </audio>
             </div>
