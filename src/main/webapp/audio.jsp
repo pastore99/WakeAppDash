@@ -70,37 +70,37 @@
                 switch (audio.getEmozioneutente()) {
                   case "felice":
               %>
-              <img src="img/Happy.svg" alt="Happy" height="120px">
+              <img src="img/happy.png" alt="Happy" height="120px">
               <%
                   break;
                 case "triste":
               %>
-              <img src="img/Happy.svg" alt="Happy" height="120px">
+              <img src="img/sad.png" alt="Happy" height="120px">
               <%
                   break;
                 case "arrabbiato":
               %>
-              <img src="img/Happy.svg" alt="Happy" height="120px">
+              <img src="img/angry.png" alt="Happy" height="120px">
               <%
                   break;
                 case "sorpreso":
               %>
-              <img src="img/Happy.svg" alt="Happy" height="120px">
+              <img src="img/surprise.png" alt="Happy" height="120px">
               <%
                   break;
                 case "disgustato":
               %>
-              <img src="img/Happy.svg" alt="Happy" height="120px">
+              <img src="img/disgust.png" alt="Happy" height="120px">
               <%
                   break;
                 case "neutrale":
               %>
-              <img src="img/Happy.svg" alt="Happy" height="120px">
+              <img src="img/neutral.png" alt="Happy" height="120px">
               <%
                   break;
                 case "impaurito":
               %>
-              <img src="img/Happy.svg" alt="Happy" height="120px">
+              <img src="img/fear.png" alt="Happy" height="120px">
               <%
                     break;
                 }
@@ -108,7 +108,7 @@
               <p class="color-dark-custom fs-4">Utente</p>
             </div>
             <div class="col-md-6 text-center">
-              <img src="img/<%=lista.get(0).getNome()%>>.svg" alt="Sad" height="120px">
+              <img src="img/<%=lista.get(0).getNome()%>.png" alt="Sad" height="120px">
               <span class="badge rounded-pill bg-yellow-light color-dark-custom"><%=lista.get(0).getValore()%>%</span>
               <p class="color-dark-custom fs-4">Intelligenza artificiale</p>
             </div>
@@ -117,10 +117,10 @@
               for (Emozione e:lista) {
             %>
             <div class="col-12 my-2">
-              <div class="progress" style="height: 68px;">
-                <div class="progress-bar bg-violette" role="progressbar" aria-label="Triste" style="width: <%=e.getValore()%>%;" aria-valuenow="<%=e.getValore()%>" aria-valuemin="0" aria-valuemax="100">
+              <img src="img/<%=e.getNome()%>.png" alt="<%=e.getNome()%>" height="68px" class="px-2" style="z-index: 100; position: absolute;">
+              <div class="progress" style="height: 68px; z-index: 1">
+                <div class="progress-bar bg-violette" role="progressbar" aria-label="<%=e.getNome()%>" style="width: <%=e.getValore()%>%;" aria-valuenow="<%=e.getValore()%>" aria-valuemin="0" aria-valuemax="100">
                   <div class="d-flex justify-content-start align-items-center">
-                    <img src="img/<%=e.getNome()%>.svg" alt="<%=e.getNome()%>" height="60px" class="px-2">
                     <p class="color-dark-custom w-100 text-center fs-4 m-0"><%=e.getValore()%>%</p>
                   </div>
                 </div>

@@ -1,11 +1,10 @@
-<%@ page import="beans.Utente" %>
-<%@ page import="java.util.Collection" %>
-<%@ page import="beans.Video" %>
-<%@ page import="java.util.Iterator" %>
-<%@ page import="beans.Audio" %>
-<%@ page import="java.util.Base64" %>
 <%@ page import="java.nio.charset.StandardCharsets" %>
 <%@ page import="com.google.gson.Gson" %>
+<%@ page import="org.json.simple.parser.JSONParser" %>
+<%@ page import="controls.ServerPY" %>
+<%@ page import="org.json.simple.JSONObject" %>
+<%@ page import="beans.*" %>
+<%@ page import="java.util.*" %>
 <%
   Utente user = (Utente) request.getAttribute("utente");
   if(user == null) {
@@ -99,7 +98,8 @@
                   <th scope="col" class="text-center">Media</th>
                   <th scope="col" class="text-center">Data</th>
                   <th scope="col" class="text-center">Durata</th>
-                  <th scope="col" class="text-center">Emoji</th>
+                  <th scope="col" class="text-center">Emozione utente</th>
+                  <th scope="col" class="text-center">Emozione IA</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -121,6 +121,28 @@
                   <td class="color-dark-custom align-middle text-center"><%=video.getData()%></td>
                   <td class="color-dark-custom align-middle text-center"><%=video.getDurata()%></td>
                   <td class="color-dark-custom align-middle text-center"><%=video.getEmozioneUtente()%></td>
+                  <%
+                    JSONParser parser = new JSONParser();
+                    String app = video.getEmozioneIa().replace("\'", "\"");
+                    Object obj2 = parser.parse(app);
+                    Emozioni emozioni = ServerPY.parseEmozioniObject((JSONObject) obj2);
+                    ArrayList<Emozione> lista = new ArrayList<>();
+                    lista.add(new Emozione("arrabbiato", emozioni.getArrabbiato()));
+                    lista.add(new Emozione("triste", emozioni.getTriste()));
+                    lista.add(new Emozione("felice", emozioni.getFelice()));
+                    lista.add(new Emozione("disgustato", emozioni.getDisgustato()));
+                    lista.add(new Emozione("sorpreso", emozioni.getSorpreso()));
+                    lista.add(new Emozione("neutrale", emozioni.getNeutrale()));
+                    lista.add(new Emozione("impaurito", emozioni.getImpaurito()));
+                    lista.sort(new Comparator<Emozione>() {
+                      @Override
+                      public int compare(Emozione o1, Emozione o2) {
+                        return o1.getValore() < o2.getValore() ? 1 : -1;
+                      }
+                    });
+                    String file = (String) request.getAttribute("file");
+                  %>
+                  <td class="color-dark-custom align-middle text-center"><%=lista.get(0).getNome()%> - <%=lista.get(0).getValore()%>%</td>
                 </tr>
                 <%
                     }
@@ -152,8 +174,9 @@
                 <tr>
                   <th scope="col" class="text-center">Media</th>
                   <th scope="col" class="text-center">Data</th>
-                  <th scope="col" class="text-center">Emoji</th>
                   <th scope="col" class="text-center">Durata</th>
+                  <th scope="col" class="text-center">Emozione utente</th>
+                  <th scope="col" class="text-center">Emozione IA</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -179,6 +202,27 @@
                   <td class="color-dark-custom align-middle text-center"><%=audio1.getData()%></td>
                   <td class="color-dark-custom align-middle text-center"><%=audio1.getDurata()%></td>
                   <td class="color-dark-custom align-middle text-center"><%=audio1.getEmozioneutente()%></td>
+                  <%
+                    JSONParser parser = new JSONParser();
+                    String app = audio1.getEmozioneia().replace("\'", "\"");
+                    Object obj2 = parser.parse(app);
+                    Emozioni emozioni = ServerPY.parseEmozioniObject((JSONObject) obj2);
+                    ArrayList<Emozione> lista = new ArrayList<>();
+                    lista.add(new Emozione("arrabbiato", emozioni.getArrabbiato()));
+                    lista.add(new Emozione("triste", emozioni.getTriste()));
+                    lista.add(new Emozione("felice", emozioni.getFelice()));
+                    lista.add(new Emozione("disgustato", emozioni.getDisgustato()));
+                    lista.add(new Emozione("sorpreso", emozioni.getSorpreso()));
+                    lista.add(new Emozione("neutrale", emozioni.getNeutrale()));
+                    lista.add(new Emozione("impaurito", emozioni.getImpaurito()));
+                    lista.sort(new Comparator<Emozione>() {
+                      @Override
+                      public int compare(Emozione o1, Emozione o2) {
+                        return o1.getValore() < o2.getValore() ? 1 : -1;
+                      }
+                    });
+                  %>
+                  <td class="color-dark-custom align-middle text-center"><%=lista.get(0).getNome()%> - <%=lista.get(0).getValore()%>%</td>
                 </tr>
                 <%
                   }

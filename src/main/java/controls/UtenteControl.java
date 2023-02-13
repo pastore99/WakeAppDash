@@ -54,11 +54,6 @@ public class UtenteControl extends HttpServlet {
 
             request.setAttribute("audio", list);
 
-            //Parametri ambientali
-            //URL NOT FOUND ON SERVER PY
-
-            //Parametri vitali
-            //URL NOT FOUND ON SERVER PY
         } catch (Exception e) {
             e.printStackTrace();
         }

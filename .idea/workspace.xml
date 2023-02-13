@@ -9,15 +9,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d79c946a-99fc-437c-957f-851669e44686" name="Changes" comment="Fix Notification">
+    <list default="true" id="d79c946a-99fc-437c-957f-851669e44686" name="Changes" comment="Update project. Update video.">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/angry.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/disgust.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/fear.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/happy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/neutral.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/sad.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/surprise.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_02_2023_15_17_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_02_2023_15_17__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_02_2023_16_46_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_02_2023_16_46__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/beans/Audio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/beans/Audio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controls/AudioControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controls/AudioControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controls/ServerPY.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controls/ServerPY.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controls/UtenteControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controls/UtenteControl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/audio.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/audio.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/Angry.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/Happy.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/Sad.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/Smile.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/paziente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/paziente.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/video.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/video.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,20 +48,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
-  </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
-  }
-}]]></component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="04f35947-172a-4d4c-9c4a-e0f0553a72be" />
-        <option name="url" value="https://github.com/pastore99/WakeAppDash.git" />
-      </UrlAndAccount>
-    </option>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -118,7 +117,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="48828" />
+        <option name="DEBUG_PORT" value="49829" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -252,14 +251,7 @@
       <option name="project" value="LOCAL" />
       <updated>1676136810994</updated>
     </task>
-    <task id="LOCAL-00007" summary="Fix Notification">
-      <created>1676282605608</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1676282605609</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,8 +273,7 @@
     <MESSAGE value="Implementata connessione al WS APIRest per recupero dati dal database" />
     <MESSAGE value="Update UI dashboard.jsp page&#10;Insert test.jsp page to testing the new UI" />
     <MESSAGE value="Update project. Update video." />
-    <MESSAGE value="Fix Notification" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix Notification" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update project. Update video." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -352,228 +343,8 @@
           <line>15</line>
           <option name="timeStamp" value="66" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/ServerPY.java</url>
-          <line>125</line>
-          <option name="timeStamp" value="67" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/ServerPY.java</url>
-          <line>126</line>
-          <option name="timeStamp" value="68" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/ServerPY.java</url>
-          <line>127</line>
-          <option name="timeStamp" value="69" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/ServerPY.java</url>
-          <line>130</line>
-          <option name="timeStamp" value="70" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/ServerPY.java</url>
-          <line>129</line>
-          <option name="timeStamp" value="71" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/ServerPY.java</url>
-          <line>131</line>
-          <option name="timeStamp" value="72" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/ServerPY.java</url>
-          <line>132</line>
-          <option name="timeStamp" value="73" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/ServerPY.java</url>
-          <line>133</line>
-          <option name="timeStamp" value="74" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/AudioControl.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="75" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/AudioControl.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="76" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/AudioControl.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="77" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/AudioControl.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="78" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/AudioControl.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="79" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/AudioControl.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="80" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/AudioControl.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="81" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/AudioControl.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="82" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/AudioControl.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="83" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/AudioControl.java</url>
-          <line>44</line>
-          <option name="timeStamp" value="84" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/AudioControl.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="85" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/AudioControl.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="86" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/AudioControl.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="87" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/AudioControl.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="88" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/AudioControl.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="90" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/AudioControl.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="91" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/paziente.jsp</url>
-          <line>173</line>
-          <option name="timeStamp" value="92" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/paziente.jsp</url>
-          <line>175</line>
-          <option name="timeStamp" value="93" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/paziente.jsp</url>
-          <line>167</line>
-          <option name="timeStamp" value="94" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="95" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="99" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/UtenteControl.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="100" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/ServerPY.java</url>
-          <line>107</line>
-          <option name="timeStamp" value="101" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/ServerPY.java</url>
-          <line>108</line>
-          <option name="timeStamp" value="102" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/ServerPY.java</url>
-          <line>109</line>
-          <option name="timeStamp" value="103" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/ServerPY.java</url>
-          <line>110</line>
-          <option name="timeStamp" value="104" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/ServerPY.java</url>
-          <line>111</line>
-          <option name="timeStamp" value="105" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/ServerPY.java</url>
-          <line>112</line>
-          <option name="timeStamp" value="106" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/ServerPY.java</url>
-          <line>115</line>
-          <option name="timeStamp" value="107" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/ServerPY.java</url>
-          <line>113</line>
-          <option name="timeStamp" value="108" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/ServerPY.java</url>
-          <line>114</line>
-          <option name="timeStamp" value="109" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/ServerPY.java</url>
-          <line>116</line>
-          <option name="timeStamp" value="110" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/ServerPY.java</url>
-          <line>117</line>
-          <option name="timeStamp" value="111" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/ServerPY.java</url>
-          <line>119</line>
-          <option name="timeStamp" value="112" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controls/ServerPY.java</url>
-          <line>118</line>
-          <option name="timeStamp" value="113" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <pin-to-top-manager>
-      <pinned-members>
-        <PinnedItemInfo parentTag="org.apache.catalina.connector.Response" memberName="applicationResponse" />
-      </pinned-members>
-    </pin-to-top-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
