@@ -208,7 +208,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form>
+          <form action="" method="post">
             <div class="row mb-3">
               <label for="TxtNomePaziente" class="col-sm-4 col-form-label">Nome</label>
               <div class="col-sm-8">

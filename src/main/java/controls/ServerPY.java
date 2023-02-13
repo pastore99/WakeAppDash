@@ -100,17 +100,22 @@ public class ServerPY {
     }
 
     public static Audio parseAudioObject(JSONObject audio) {
+
+        /*
+        {'emozioneutente': 'arrabbiato', 'idaudio': 16, 'data': '13/02/2023', 'path': './audio/07df3fcd-e1c5-48e3-8ae2-9f1b10a7cb8c/audio.mp4.wav', 'idutente': '07df3fcd-e1c5-48e3-8ae2-9f1b10a7cb8c', 'emozioneia': '{\n    "neutral": 0.22889856417145402,\n    "disgust": 3.1267005836508876e-10,\n    "happy": 0.025210834611275282,\n    "fear": 5.5160274247648624e-08,\n    "angry": 0.06109114589200261,\n    "surprise": 0.6847993998523239,\n    "sad": 7.934524247686946e-21\n}', 'durata': 10, 'idtesto': '1'}
+         */
+
         Audio bean = new Audio();
-        Long l = (long) audio.get("idaudio");
-        bean.setIdAudio(l.intValue());
+        String l = (String) audio.get("idaudio");
+        bean.setIdaudio(l);
         String dataString = (String) audio.get("data");
         bean.setData(dataString);
-        l = (long) audio.get("durata");
-        bean.setDurata(l.intValue());
-        bean.setEmozioneIa((String) audio.get("emozioneIA"));
-        bean.setEmozioneUtente((String) audio.get("emozioneUtente"));
-        bean.setIdTesto((String) audio.get("idtesto"));
-        bean.setIdUtente((String) audio.get("idUtente"));
+        long dl = (long) audio.get("durata");
+        bean.setDurata(dl);
+        bean.setEmozioneia((String) audio.get("emozioneia"));
+        bean.setEmozioneutente((String) audio.get("emozioneutente"));
+        bean.setIdtesto((String) audio.get("idtesto"));
+        bean.setIdutente((String) audio.get("idutente"));
         bean.setPath((String) audio.get("path"));
         return bean;
     }

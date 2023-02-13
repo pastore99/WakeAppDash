@@ -3,6 +3,8 @@ package controls;
 import beans.Audio;
 import beans.Utente;
 import beans.Video;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -11,8 +13,10 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;
+import java.util.List;
 
 @WebServlet(name = "UtenteControl", value = "/utente-control")
 public class UtenteControl extends HttpServlet {
@@ -46,11 +50,9 @@ public class UtenteControl extends HttpServlet {
 
             //Audio
             String audioResult = ServerPY.run("/api/audio?user_id=" + id);
-            obj = parser.parse(audioResult);
-            JSONArray audioList = (JSONArray) obj;
-            Collection<Audio> audio = new LinkedList<>();
-            audioList.forEach(emp -> audio.add(ServerPY.parseAudioObject((JSONObject) emp)));
-            request.setAttribute("audio", audio);
+            ArrayList<Audio> list = new Gson().fromJson(audioResult, new TypeToken<List<Audio>>(){}.getType());
+
+            request.setAttribute("audio", list);
 
             //Parametri ambientali
             //URL NOT FOUND ON SERVER PY

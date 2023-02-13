@@ -169,13 +169,16 @@
                       <button class="ratio ratio-16x9 bg-dark-custom" type="submit">
                         <div class="d-flex align-items-center justify-content-center"><i class="bi bi-cassette text-white fs-2"></i></div>
                       </button>
-                      <input type="text" name="InputUser" value="<%=Base64.getUrlEncoder().encodeToString((new Gson().toJson(user)).getBytes())%>" hidden="hidden">
-                      <input type="text" name="InputAudio" value="<%=Base64.getUrlEncoder().encodeToString((new Gson().toJson(audio1)).getBytes())%>" hidden="hidden">
+                      <input type="text" name="InputUser" value="<%=Base64.getUrlEncoder().encodeToString((new Gson().toJson(user)).getBytes(StandardCharsets.UTF_8))%>" hidden="hidden">
+                      <%
+                        String json = new Gson().toJson(audio1);
+                      %>
+                      <input type="text" name="InputAudio" value="<%=Base64.getUrlEncoder().encodeToString(json.getBytes(StandardCharsets.UTF_8))%>" hidden="hidden">
                     </form>
                   </td>
                   <td class="color-dark-custom align-middle text-center"><%=audio1.getData()%></td>
                   <td class="color-dark-custom align-middle text-center"><%=audio1.getDurata()%></td>
-                  <td class="color-dark-custom align-middle text-center"><%=audio1.getEmozioneUtente()%></td>
+                  <td class="color-dark-custom align-middle text-center"><%=audio1.getEmozioneutente()%></td>
                 </tr>
                 <%
                   }

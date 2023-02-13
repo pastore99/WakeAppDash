@@ -21,7 +21,7 @@
     }
   });
   String file = (String) request.getAttribute("file");
-  if(audio == null || user == null || file == null) response.sendRedirect(response.encodeRedirectURL("./audio-control?idAudio="+audio.getIdAudio()));
+  if(audio == null || user == null || file == null) response.sendRedirect(response.encodeRedirectURL("./audio-control?idAudio="+audio.getIdaudio()));
 %>
 <html>
 <head>
@@ -67,7 +67,7 @@
           <div class="row my-4">
             <div class="col-md-6 text-center">
               <%
-                switch (audio.getEmozioneUtente()) {
+                switch (audio.getEmozioneutente()) {
                   case "felice":
               %>
               <img src="img/Happy.svg" alt="Happy" height="120px">

@@ -1,90 +1,104 @@
 package beans;
+import java.io.Serializable;
 import java.sql.Date;
 
-public class Audio {
-    private Integer idAudio;
+public class Audio implements Serializable {
+    private String idaudio;
     private String data;
-    private Integer durata;
-    private String emozioneIa;
-    private String emozioneUtente;
-    private String idUtente;
-    private String idTesto;
+    private long durata;
+    private String emozioneia;
+    private String emozioneutente;
+    private String idutente;
+    private String idtesto;
     private String path;
 
     public Audio() {}
-    public Audio(Integer idAudio, String data, String emozioneIa, String emozioneUtente, String idUtente, String idTesto) {
-        this.idAudio = idAudio;
-        this. data = data;
-        this.emozioneIa = emozioneIa;
-        this.emozioneUtente = emozioneUtente;
-        this.idUtente = idUtente;
-        this.idTesto = idTesto;
+
+    public Audio(String idaudio, String data, long durata, String emozioneia, String emozioneutente, String idutente, String idtesto, String path) {
+        this.idaudio = idaudio;
+        this.data = data;
+        this.durata = durata;
+        this.emozioneia = emozioneia;
+        this.emozioneutente = emozioneutente;
+        this.idutente = idutente;
+        this.idtesto = idtesto;
+        this.path = path;
     }
 
-    public Integer getIdAudio() {
-        return idAudio;
+    public String getIdaudio() {
+        return idaudio;
     }
-    public void setIdAudio(Integer idAudio) {
-        this.idAudio = idAudio;
+
+    public void setIdaudio(String idaudio) {
+        this.idaudio = idaudio;
     }
 
     public String getData() {
         return data;
     }
+
     public void setData(String data) {
         this.data = data;
     }
 
-    public Integer getDurata() {
+    public long getDurata() {
         return durata;
     }
-    public void setDurata(Integer durata) {
+
+    public void setDurata(long durata) {
         this.durata = durata;
     }
 
-    public String getEmozioneIa() {
-        return emozioneIa;
-    }
-    public void setEmozioneIa(String emozioneIa) {
-        this.emozioneIa = emozioneIa;
+    public String getEmozioneia() {
+        return emozioneia;
     }
 
-    public String getEmozioneUtente() {
-        return emozioneUtente;
-    }
-    public void setEmozioneUtente(String emozioneUtente) {
-        this.emozioneUtente = emozioneUtente;
+    public void setEmozioneia(String emozioneia) {
+        this.emozioneia = emozioneia;
     }
 
-    public String getIdUtente() {
-        return idUtente;
-    }
-    public void setIdUtente(String idUtente) {
-        this.idUtente = idUtente;
+    public String getEmozioneutente() {
+        return emozioneutente;
     }
 
-    public String getIdTesto() {
-        return idTesto;
+    public void setEmozioneutente(String emozioneutente) {
+        this.emozioneutente = emozioneutente;
     }
-    public void setIdTesto(String idTesto) {
-        this.idTesto = idTesto;
+
+    public String getIdutente() {
+        return idutente;
     }
+
+    public void setIdutente(String idutente) {
+        this.idutente = idutente;
+    }
+
+    public String getIdtesto() {
+        return idtesto;
+    }
+
+    public void setIdtesto(String idtesto) {
+        this.idtesto = idtesto;
+    }
+
     public String getPath() {
         return path;
     }
-    public void setPath(String idTesto) {
+
+    public void setPath(String path) {
         this.path = path;
     }
+
     @Override
     public String toString() {
         return "Audio{" +
-                "idAudio=" + idAudio +
+                "idAudio=" + idaudio +
                 ", data=" + data +
                 ", durata=" + durata +
-                ", emozioneIa='" + emozioneIa + '\'' +
-                ", emozioneUtente='" + emozioneUtente + '\'' +
-                ", idUtente='" + idUtente + '\'' +
-                ", idTesto='" + idTesto + '\'' +
+                ", emozioneIa='" + emozioneia + '\'' +
+                ", emozioneUtente='" + emozioneutente + '\'' +
+                ", idUtente='" + idutente + '\'' +
+                ", idTesto='" + idtesto + '\'' +
                 '}';
     }
 }

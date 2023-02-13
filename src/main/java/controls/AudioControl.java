@@ -30,6 +30,11 @@ import java.util.*;
 public class AudioControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        super.doGet(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             String u = new String(Base64.getUrlDecoder().decode(request.getParameter("InputUser")), StandardCharsets.UTF_8);
             Utente utente = new Gson().fromJson(u, Utente.class);
@@ -37,12 +42,12 @@ public class AudioControl extends HttpServlet {
             Audio audio = new Gson().fromJson(a, Audio.class);
 
             JSONParser parser = new JSONParser();
-            String app = audio.getEmozioneIa().replace("\'", "\"");
+            String app = audio.getEmozioneia().replace("\'", "\"");
             Object obj2 = parser.parse(app);
             Emozioni emozioneIA = ServerPY.parseEmozioniObject((JSONObject) obj2);
 
             String keyFake = Base64.getUrlEncoder().encodeToString(utente.getKey().getBytes(StandardCharsets.UTF_8));
-            byte[] obj = ServerPY.runFile("/api/audio/play?audio_id="+ audio.getIdAudio());
+            byte[] obj = ServerPY.runFile("/api/audio/play?audio_id="+ audio.getIdaudio());
             byte[] decrypted = Decryptor.decrypt(keyFake, obj);
             String b64 = Base64.getEncoder().encodeToString(decrypted);
             request.setAttribute("emozioneIA", emozioneIA);
@@ -54,10 +59,5 @@ public class AudioControl extends HttpServlet {
         }
         RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/audio.jsp");
         dispatcher.forward(request, response);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        super.doGet(request,response);
     }
 }
