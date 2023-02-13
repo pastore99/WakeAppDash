@@ -9,7 +9,7 @@ import org.json.simple.JSONObject;
 
 public class ServerPY {
     static OkHttpClient client = new OkHttpClient();
-    private static String url = "https://0327c7abc2f022.lhr.life";
+    private static String url = "http://127.0.0.1:5000";
     private static String token = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY3MTIwODA5NSwianRpIjoiYmE4NDVkNTAtZGE5Ni00N2Q4LWE1NmItNTY0MjkxZGYxNDVhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InRlc3QxQGdtYWlsLmNvbSIsIm5iZiI6MTY3MTIwODA5NX0.ZDfA5LfmvtmoigWz4Fqww3yKlhkJKbcHysi7intLwKo";
 
     public static String getServerURL() {
@@ -125,13 +125,11 @@ public class ServerPY {
             Request request = new Request.Builder()
                     .url(url + urlPath)
                     .addHeader("Authorization", token)
-                    .addHeader("Content-Type", "application/json; charset=utf-8")
                     .post(formBody)
                     .build();
 
             Response response = client.newCall(request).execute();
-            if (response.code() == 200 || response.code() == 201) return true;
-            else return false;
+            return response.code() == 200 || response.code() == 201;
         } catch (Exception e) {
             e.printStackTrace();
             return false;
