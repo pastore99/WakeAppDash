@@ -102,7 +102,7 @@
     <div class="row p-0 m-0 h-100">
       <div class="col-md-2 m-0 p-0 bg-dark-custom">
         <div class="row">
-          <div class="col-12 d-flex justify-content-center align-items-center pt-5 pb-4"><img src="img/WakeApp.svg" height="120px" alt="Logo WakeApp"></div>
+          <div class="col-12 d-flex justify-content-center align-items-center pt-5 pb-4"><img src="img/img.png" height="120px" alt="Logo WakeApp"></div>
           <div class="col-12">
             <a href="<%=response.encodeURL("dashboard.jsp")%>" class="btn-menu w-100"><i class="bi bi-people-fill me-2"></i>Lista pazienti</a>
             <a class="btn-menu w-100"><i class="bi bi-smartwatch me-2"></i>Dispositivi</a>

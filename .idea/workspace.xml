@@ -10,9 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d79c946a-99fc-437c-957f-851669e44686" name="Changes" comment="sapete cosa ho fatto">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/img.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_02_2023_09_40_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_02_2023_09_40__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_02_2023_11_01_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_02_2023_11_01__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controls/ServerPY.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controls/ServerPY.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/paziente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/paziente.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,8 +86,8 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="TomCat 9" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.70" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="18">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/WakeAppDash_war/dashboard.jsp" />
+    <configuration name="TomCat 9" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.56" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="18">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8088/WakeAppDash_war/dashboard.jsp" />
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -192,6 +197,7 @@
       <workItem from="1675432703959" duration="1675000" />
       <workItem from="1675714803726" duration="2982000" />
       <workItem from="1676126062125" duration="12636000" />
+      <workItem from="1676481488767" duration="299000" />
     </task>
     <task id="LOCAL-00001" summary="Inserite senzioni">
       <created>1670689257291</created>
