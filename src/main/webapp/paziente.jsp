@@ -87,9 +87,10 @@
               <button type="button" class="btn-menu d-none" id="BtnDaschboard" onclick="showParametri();">Dashboard</button>
             </div>
             <%
-              Collection<?> videos = (Collection<?>) request.getAttribute("video");
-              if(videos == null) response.sendRedirect("utente-control");
-              if(videos != null && videos.size() > 0) {
+              Collection<?> videoColl = (Collection<?>) request.getAttribute("video");
+              ArrayList<?> videos = new ArrayList<>(videoColl);
+              Collections.reverse(videos);
+              if(videos.size() > 0) {
             %>
             <div class="col-12" id="PnlTabellaVideo">
               <table class="table table-sm table-striped border border-1" id="TblVideo">
@@ -164,9 +165,10 @@
             </div>
             <%
               }
-              Collection<?> audio = (Collection<?>) request.getAttribute("audio");
-              if(audio == null) response.sendRedirect("utente-control");
-              if(audio != null && audio.size() > 0) {
+              Collection<?> audioColl = (Collection<?>) request.getAttribute("audio");
+              ArrayList<?> audio = new ArrayList<>(audioColl);
+              Collections.reverse(audio);
+              if(audio.size() > 0) {
             %>
             <div class="col-12 d-none" id="PnlTabellaAudio">
               <table class="table table-sm table-striped border border-1" id="TblAudio">
