@@ -6,6 +6,7 @@
 <%@ page import="beans.*" %>
 <%@ page import="java.util.*" %>
 <%
+  String emo;
   Utente user = (Utente) request.getAttribute("utente");
   if(user == null) {
     response.sendRedirect("utente-control");
@@ -121,7 +122,11 @@
                   </th>
                   <td class="color-dark-custom align-middle text-center"><%=video.getData()%></td>
                   <!--<td class="color-dark-custom align-middle text-center"><%=video.getDurata()%></td> -->
-                  <td class="color-dark-custom align-middle text-center"><%=video.getEmozioneUtente()%></td>
+                  <%
+                    emo = video.getEmozioneUtente();
+                    emo = emo.substring(0,1).toUpperCase() + emo.substring(1);
+                  %>
+                  <td class="color-dark-custom align-middle text-center"><%=emo%></td>
                   <%
                     JSONParser parser = new JSONParser();
                     String app = video.getEmozioneIa().replace("\'", "\"");
@@ -142,8 +147,10 @@
                       }
                     });
                     String file = (String) request.getAttribute("file");
+                    emo = lista.get(0).getNome();
+                    emo = emo.substring(0,1).toUpperCase() + emo.substring(1);
                   %>
-                  <td class="color-dark-custom align-middle text-center"><%=lista.get(0).getNome()%> - <%=lista.get(0).getValore()%>%</td>
+                  <td class="color-dark-custom align-middle text-center"><%=emo%> - <%=lista.get(0).getValore()%>%</td>
                 </tr>
                 <%
                     }
@@ -203,7 +210,11 @@
                   </td>
                   <td class="color-dark-custom align-middle text-center"><%=audio1.getData()%></td>
                   <!--<td class="color-dark-custom align-middle text-center"><%=audio1.getDurata()%></td>-->
-                  <td class="color-dark-custom align-middle text-center"><%=audio1.getEmozioneutente()%></td>
+                  <%
+                    emo = audio1.getEmozioneutente();
+                    emo = emo.substring(0,1).toUpperCase() + emo.substring(1);
+                  %>
+                  <td class="color-dark-custom align-middle text-center"><%=%></td>
                   <%
                     JSONParser parser = new JSONParser();
                     String app = audio1.getEmozioneia().replace("\'", "\"");
@@ -223,8 +234,10 @@
                         return o1.getValore() < o2.getValore() ? 1 : -1;
                       }
                     });
+                    emo = lista.get(0).getNome();
+                    emo = emo.substring(0,1).toUpperCase() + emo.substring(1);
                   %>
-                  <td class="color-dark-custom align-middle text-center"><%=lista.get(0).getNome()%> - <%=lista.get(0).getValore()%>%</td>
+                  <td class="color-dark-custom align-middle text-center"><%=emo%> - <%=lista.get(0).getValore()%>%</td>
                 </tr>
                 <%
                   }

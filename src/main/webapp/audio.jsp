@@ -60,7 +60,7 @@
                 Oh no, questo browser non supporta il formato audio... Per favore, riprova con un altro browser!
               </audio>
             </div>
-            <div class="col-12"><p class="text-white" id="LblDataRegistrazione">Audio registrato il <%=audio.getData()%> </p></div>
+            <div class="col-12"><p class="text-dark" id="LblDataRegistrazione">Audio registrato il <%=audio.getData()%> </p></div>
           </div>
 
           <!-- Emozioni -->
