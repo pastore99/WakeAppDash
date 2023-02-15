@@ -84,7 +84,7 @@
             <div class="col-12 mb-4">
               <button type="button" class="btn-menu btn-menu-active" id="BtnReportVideo" onclick="showVideo();">Report video</button>
               <button type="button" class="btn-menu" id="BtnReportAudio" onclick="showAudio();">Report audio</button>
-              <button type="button" class="btn-menu" id="BtnDaschboard" onclick="showParametri();">Dashboard</button>
+              <button type="button" class="btn-menu d-none" id="BtnDaschboard" onclick="showParametri();">Dashboard</button>
             </div>
             <%
               Collection<?> videos = (Collection<?>) request.getAttribute("video");
@@ -97,7 +97,7 @@
                 <tr>
                   <th scope="col" class="text-center">Media</th>
                   <th scope="col" class="text-center">Data</th>
-                  <th scope="col" class="text-center">Durata</th>
+                  <!--<th scope="col" class="text-center">Durata</th>-->
                   <th scope="col" class="text-center">Emozione utente</th>
                   <th scope="col" class="text-center">Emozione IA</th>
                 </tr>
@@ -119,7 +119,7 @@
                     </form>
                   </th>
                   <td class="color-dark-custom align-middle text-center"><%=video.getData()%></td>
-                  <td class="color-dark-custom align-middle text-center"><%=video.getDurata()%></td>
+                  <!--<td class="color-dark-custom align-middle text-center"><%=video.getDurata()%></td> -->
                   <td class="color-dark-custom align-middle text-center"><%=video.getEmozioneUtente()%></td>
                   <%
                     JSONParser parser = new JSONParser();
@@ -174,7 +174,7 @@
                 <tr>
                   <th scope="col" class="text-center">Media</th>
                   <th scope="col" class="text-center">Data</th>
-                  <th scope="col" class="text-center">Durata</th>
+                  <!-- <th scope="col" class="text-center">Durata</th> -->
                   <th scope="col" class="text-center">Emozione utente</th>
                   <th scope="col" class="text-center">Emozione IA</th>
                 </tr>
@@ -187,7 +187,7 @@
                 %>
                 <tr>
                   <% String urlsafe = Base64.getUrlEncoder().encodeToString(user.getKey().getBytes(StandardCharsets.UTF_8)); %>
-                  <td class="text-center">
+                  <td class="text-center" style="width: 200px;">
                     <form action="<%=response.encodeURL("audio-control")%>" method="post">
                       <button class="ratio ratio-16x9 bg-dark-custom" type="submit">
                         <div class="d-flex align-items-center justify-content-center"><i class="bi bi-cassette text-white fs-2"></i></div>
@@ -200,7 +200,7 @@
                     </form>
                   </td>
                   <td class="color-dark-custom align-middle text-center"><%=audio1.getData()%></td>
-                  <td class="color-dark-custom align-middle text-center"><%=audio1.getDurata()%></td>
+                  <!--<td class="color-dark-custom align-middle text-center"><%=audio1.getDurata()%></td>-->
                   <td class="color-dark-custom align-middle text-center"><%=audio1.getEmozioneutente()%></td>
                   <%
                     JSONParser parser = new JSONParser();

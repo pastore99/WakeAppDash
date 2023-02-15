@@ -15,7 +15,8 @@ function showAudio() {
     $('#PnlTabellaAudio').removeClass("d-none");
     $('#PnlNoAudio').removeClass("d-none");
     $('#PnlDaschboard').addClass("d-none");
-    $('#BtnReportVideo').class("btn-menu");
+    $('#BtnReportVideo').removeClass("btn-menu-active");
+    $('#BtnReportVideo').addClass("btn-menu");
     $('#BtnReportAudio').class("btn-menu-active");
     $('#BtnDaschboard').class("btn-menu");
 }

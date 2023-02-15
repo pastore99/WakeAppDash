@@ -18,7 +18,7 @@ import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
-@WebServlet(name = "VideoControl", value = "/video2-control")
+@WebServlet(name = "VideoControl2", value = "/video2-control")
 public class Video2Control extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -10,24 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d79c946a-99fc-437c-957f-851669e44686" name="Changes" comment="Update project. Update video.">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/angry.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/disgust.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/fear.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/happy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/neutral.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/sad.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/surprise.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_02_2023_15_17_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_02_2023_15_17__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_02_2023_16_46_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_02_2023_16_46__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controls/UtenteControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controls/UtenteControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controls/ServerPY.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controls/ServerPY.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controls/Video2Control.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controls/Video2Control.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/audio.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/audio.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/Angry.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/Happy.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/Sad.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/Smile.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/angry.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/img/arrabbiato.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/disgust.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/img/disgustato.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/fear.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/img/impaurito.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/happy.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/img/felice.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/neutral.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/img/neutrale.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/sad.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/img/triste.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/surprise.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/img/sorpreso.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/paziente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/paziente.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/video.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/video.jsp" afterDir="false" />
@@ -100,6 +93,8 @@
   </component>
   <component name="RunManager">
     <configuration name="TomCat 9" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.70" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="18">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/WakeAppDash_war/dashboard.jsp" />
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="WakeAppDash:war">
@@ -345,6 +340,11 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="org.apache.catalina.connector.Response" memberName="applicationResponse" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
